@@ -5,11 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-/**
- * @author: Tom Tsiliopoulos
- * @date: May 26, 2016
- * @version: 0.0.1 - added SetActivePage method
- */
+/*
+* @File name : Navigation bar user control 
+* @Author : Ritesh Patel and Parvati patel
+* @Website name : 
+* @File description : Navigation Bar
+*
+* */
 
 namespace GameTracking
 {
@@ -33,10 +35,10 @@ namespace GameTracking
             switch (Page.Title)
             {
                 case "Home Page":
-                    home.Attributes.Add("class", "active");
+                    home.Attributes.Add("class", "liactive");
                     break;
                 case "Contact":
-                    contact.Attributes.Add("class", "active");
+                    contact.Attributes.Add("class", "liactive");
                     break;
             }
         }
