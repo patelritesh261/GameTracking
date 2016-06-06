@@ -31,12 +31,13 @@
                             <label class="control-label" for="exampleInputEmail">Message</label>
                         </div>
                         <div class="col-md-offset-3 ">
-                            <asp:TextBox TextMode="MultiLine" Rows="5" CssClass="form-control" ID="txtMessage" placeholder="Enter Message" runat="server"></asp:TextBox>
+                            <asp:TextBox TextMode="MultiLine" Rows="5"  CssClass="form-control" ID="txtMessage" placeholder="Enter Message" runat="server"></asp:TextBox>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <asp:Button ID="btnsubmit" CssClass="btn btn-primary" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                        <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Submit" OnClick="btnsubmit_Click" />
+                         <asp:Button ID="Button1" CssClass="btn btn-sample-inverse" runat="server" Text="Cancel" />
                     </div>
                 </form>
                  <!-- end contact form -->

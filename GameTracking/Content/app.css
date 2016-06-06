@@ -26,11 +26,107 @@
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
 
 .liactive{background-color: #1ABC9C}
+
+
+/* css for button*/
+.btn-sample { 
+  color: #ffffff; 
+  background-color: #1ABC9C; 
+  border-color: #1ABC9C; 
+} 
+ 
+.btn-sample:hover, 
+.btn-sample:focus, 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  color: #ffffff; 
+  background-color: #3D566E; 
+  border-color: #1ABC9C; 
+} 
+ 
+.btn-sample:active, 
+.btn-sample.active, 
+.open .dropdown-toggle.btn-sample { 
+  background-image: none; 
+} 
+ 
+.btn-sample.disabled, 
+.btn-sample[disabled], 
+fieldset[disabled] .btn-sample, 
+.btn-sample.disabled:hover, 
+.btn-sample[disabled]:hover, 
+fieldset[disabled] .btn-sample:hover, 
+.btn-sample.disabled:focus, 
+.btn-sample[disabled]:focus, 
+fieldset[disabled] .btn-sample:focus, 
+.btn-sample.disabled:active, 
+.btn-sample[disabled]:active, 
+fieldset[disabled] .btn-sample:active, 
+.btn-sample.disabled.active, 
+.btn-sample[disabled].active, 
+fieldset[disabled] .btn-sample.active { 
+  background-color: #1ABC9C; 
+  border-color: #1ABC9C; 
+} 
+ 
+.btn-sample .badge { 
+  color: #1ABC9C; 
+  background-color: #ffffff; 
+}
+/* css for inverse button*/
+.btn-sample-inverse { 
+  color: #ffffff; 
+  background-color: #3D5C6E; 
+  border-color: #3D5C6E; 
+} 
+ 
+.btn-sample-inverse:hover, 
+.btn-sample-inverse:focus, 
+.btn-sample-inverse:active, 
+.btn-sample-inverse.active, 
+.open .dropdown-toggle.btn-sample-inverse { 
+  color: #ffffff; 
+  background-color: #1ABC9C; 
+  border-color: #3D5C6E; 
+} 
+ 
+.btn-sample-inverse:active, 
+.btn-sample-inverse.active, 
+.open .dropdown-toggle.btn-sample-inverse { 
+  background-image: none; 
+} 
+ 
+.btn-sample-inverse.disabled, 
+.btn-sample-inverse[disabled], 
+fieldset[disabled] .btn-sample-inverse, 
+.btn-sample-inverse.disabled:hover, 
+.btn-sample-inverse[disabled]:hover, 
+fieldset[disabled] .btn-sample-inverse:hover, 
+.btn-sample-inverse.disabled:focus, 
+.btn-sample-inverse[disabled]:focus, 
+fieldset[disabled] .btn-sample-inverse:focus, 
+.btn-sample-inverse.disabled:active, 
+.btn-sample-inverse[disabled]:active, 
+fieldset[disabled] .btn-sample-inverse:active, 
+.btn-sample-inverse.disabled.active, 
+.btn-sample-inverse[disabled].active, 
+fieldset[disabled] .btn-sample-inverse.active { 
+  background-color: #3D5C6E; 
+  border-color: #3D5C6E; 
+} 
+ 
+.btn-sample-inverse .badge { 
+  color: #3D5C6E; 
+  background-color: #ffffff; 
+}
+
 html,
 body {
     height: 100%;
     background-image:url(../Assets/images/background.jpg);
-
+        color: #333333;
+    background: #ffffff;
 }
 .navbar {
     position: relative;

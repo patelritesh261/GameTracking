@@ -3,7 +3,7 @@
     <footer class="footer-distributed">
         <div class="footer-left">
             <h3>
-                <img src="Assets/images/logo.png" /></h3>
+               <i class="fa fa-futbol-o fa-lg"></i> GameTracking</h3>
             <p class="footer-links">
                 <a href="Default.aspx">Home</a>
                 ·

@@ -7,13 +7,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace GameTracking
-{
-
-
-    public partial class Contact
-    {
-
+namespace GameTracking {
+    
+    
+    public partial class Contact {
+        
         /// <summary>
         /// txtfirstname control.
         /// </summary>
@@ -22,7 +20,7 @@ namespace GameTracking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtfirstname;
-
+        
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -31,7 +29,7 @@ namespace GameTracking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-
+        
         /// <summary>
         /// txtMessage control.
         /// </summary>
@@ -40,7 +38,7 @@ namespace GameTracking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtMessage;
-
+        
         /// <summary>
         /// btnsubmit control.
         /// </summary>
@@ -49,5 +47,14 @@ namespace GameTracking
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsubmit;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }
