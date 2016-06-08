@@ -1,7 +1,7 @@
 ﻿/*
- *@File name : Project page  
- * @Author : Ritesh Patel
- * @Website name : 
+ *@File name : custom css
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name :  GameTracking(http://gametracking.azurewebsites.net/)
  * @File description :  This is custom css for some componets 
 */
 .navbar-inverse { background-color: #3D566E}
@@ -24,7 +24,7 @@
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-top-color: #FFFFFF}
 .navbar-inverse .navbar-nav>.dropdown>a .caret { border-bottom-color: #999999}
 .navbar-inverse .navbar-nav>.dropdown>a:hover .caret { border-bottom-color: #FFFFFF}
-
+/*Active link for navigation*/
 .liactive{background-color: #1ABC9C}
 
 
@@ -124,7 +124,7 @@ fieldset[disabled] .btn-sample-inverse.active {
 html,
 body {
     height: 100%;
-    background-image:url(../Assets/images/background.jpg);
+    font-family: 'Open Sans', sans-serif;
         color: #333333;
     background: #ffffff;
 }
@@ -156,7 +156,7 @@ h2{
 
 h2 span { 
    color: white; 
-   font: bold 5vw Helvetica, Sans-Serif; 
+   font: bold 5vw Open Sans, Sans-Serif; 
 
    letter-spacing: -1px;  
    background: rgb(0, 0, 0); /* fallback color */
@@ -165,7 +165,7 @@ h2 span {
 }
 .h2small {
     color: white; 
-    font: bold 3vw Helvetica, Sans-Serif; 
+    font: bold 3vw Open Sans, Sans-Serif; 
     letter-spacing: 1px;  
 }
 .h2small em {
@@ -174,7 +174,7 @@ h2 span {
 
     h5 span {
         color: white; 
-   font: bold 24px/45px Helvetica, Sans-Serif; 
+   font: bold 24px/45px Open Sans, Sans-Serif; 
 
    letter-spacing: 10px;  
    background: rgb(0, 0, 0); /* fallback color */
@@ -186,22 +186,7 @@ h2 span em{
    
 }
 
-/*
-* css for card poster
-*/
-.card {
-background:#8DE5C4;
-margin:15px;
-padding:0px;
-box-shadow: 2px 2px 15px #888888;
-}
-    .card img {
-    width:100%;
-    }
-    .card h4{
-        font: bold 14px/45px Helvetica, Sans-Serif;
-        text-align:center;
-    }
+
 
 /*
 * footers are fixed to the bottom of the page
@@ -247,7 +232,7 @@ footer{
 
 .footer-distributed h3{
 	color:  #ffffff;
-	font: normal 36px 'Cookie', cursive;
+	font: normal 36px Open Sans, cursive;
 	margin: 0;
 }
 

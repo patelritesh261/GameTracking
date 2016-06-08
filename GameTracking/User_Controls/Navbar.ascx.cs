@@ -8,8 +8,8 @@ using System.Web.UI.WebControls;
 /*
 * @File name : Navigation bar user control 
 * @Author : Ritesh Patel and Parvati patel
-* @Website name : 
-* @File description : Navigation Bar
+* @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+* @File description : Navigation Bar with active link
 *
 * */
 
@@ -39,6 +39,12 @@ namespace GameTracking
                     break;
                 case "Contact":
                     contact.Attributes.Add("class", "liactive");
+                    break;
+                case "Login":
+                    login.Attributes.Add("class", "liactive");
+                    break;
+                case "Registration":
+                    register.Attributes.Add("class", "liactive");
                     break;
             }
         }

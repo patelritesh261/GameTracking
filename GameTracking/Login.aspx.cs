@@ -5,16 +5,16 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 /*
- *  * @File name : Home page 
+ * @File name : Login page 
  * @Author : Ritesh Patel and Parvati Patel
  * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
- * @File description : This is public home page.
+ * @File description : This is login page.
  * 
  * 
  */
-namespace GameTracking
+namespace GameTracking.AdminPanel
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class Login : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

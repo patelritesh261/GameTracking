@@ -7,9 +7,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 /*
-* @File name : Contact 
-* @Author : Ritesh Patel
-* @Website name : 
+* @File name : Contact Page
+* @Author : Ritesh Patel and Parvati Patel
+* @Website name : GameTracking(http://gametracking.azurewebsites.net/)
 * @File description : Contact form and google map 
 * @send mail through sendgrid
 * */
