@@ -22,10 +22,10 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i>Home</a></li>
-                <li id="contact" runat="server"><a href="Contact.aspx"><i class="fa fa-phone fa-lg"></i>Contact</a></li>
-                <li id="login" runat="server"><a href="Login.aspx"><i class="fa fa-sign-in  fa-lg"></i>Login</a></li>
-                <li id="register" runat="server"><a href="Registration.aspx"><i class="fa fa-user-plus  fa-lg"></i>Register</a></li>
+                <li id="home" runat="server"><a href="Default.aspx"><i class="fa fa-home fa-lg"></i> Home</a></li>
+                <li id="contact" runat="server"><a href="Contact.aspx"><i class="fa fa-phone fa-lg"></i> Contact</a></li>
+                <li id="login" runat="server"><a href="Login.aspx"><i class="fa fa-sign-in  fa-lg"></i> Login</a></li>
+                <li id="register" runat="server"><a href="Registration.aspx"><i class="fa fa-user-plus  fa-lg"></i> Register</a></li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
