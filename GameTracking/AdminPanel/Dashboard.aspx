@@ -10,7 +10,7 @@
                 
                 <bs3:Jumbotron runat="server" ID="Jumbotron1" >
         <BodyContent>
-            <h3 ><center>Total No of Games</center></h3>
+            <h3 >Total No of Games</h3>
         </BodyContent>
     </bs3:Jumbotron>
 
@@ -19,7 +19,7 @@
                 
                 <bs3:Jumbotron runat="server" ID="Jumbotron2">
         <BodyContent>
-            <h3><center>Total No of Games</center></h3>
+            <h3>Total No of Games</h3>
         </BodyContent>
     </bs3:Jumbotron>
 
@@ -28,7 +28,7 @@
                 
                 <bs3:Jumbotron runat="server" ID="Jumbotron3">
         <BodyContent>
-            <h3><center>Total No of Games</center></h3>
+            <h3>Total No of Games</h3>
         </BodyContent>
     </bs3:Jumbotron>
 
