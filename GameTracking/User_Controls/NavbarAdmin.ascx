@@ -36,7 +36,7 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Team
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add Team</a></li>
+          <li><a href="../AdminPanel/Team.aspx">Add Team</a></li>
           <li><a href="#">Display Teams</a></li>
          
         </ul>
