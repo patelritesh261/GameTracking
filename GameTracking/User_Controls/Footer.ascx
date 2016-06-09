@@ -12,19 +12,7 @@
     <div class="footer-left">
         <h3>
             <i class="fa fa-futbol-o fa-lg"></i>GameTracking</h3>
-        <p class="footer-links">
-            <a href="Default.aspx">Home</a>
-            ·
-         <a href="Projects.aspx">Projects</a>
-            ·
-         <a href="about.aspx">About</a>
-            ·
-         <a href="Education.aspx">Education</a>
-            ·
-         <a href="Service.aspx">Skills</a>
-            ·
-         <a href="Contact.aspx">Contact</a>
-        </p>
+       
         <p class="footer-company-name">Ritz &copy; 2016</p>
     </div>
     <div class="footer-center">
@@ -32,14 +20,7 @@
             <i class="fa fa-map-marker"></i>
             <p><span>10 vanessa drive, ON L3V 7Y9</span> Orillia, Canada</p>
         </div>
-        <div>
-            <i class="fa fa-phone"></i>
-            <p>+1 705 500 4460</p>
-        </div>
-        <div>
-            <i class="fa fa-envelope"></i>
-            <p><a href="mailto:support@company.com">200307232@student.georgianc.on.ca</a></p>
-        </div>
+        
     </div>
     <div class="footer-right">
         <p class="footer-company-about">

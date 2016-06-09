@@ -152,7 +152,7 @@ footer{
 }
 
 @media (max-height:800px){
-	footer { position: static; }
+	footer { position: fixed; }
 	header { padding-top:30px; }
 }
 
@@ -166,6 +166,9 @@ footer{
 
 	padding: 55px 50px;
 	margin-top: 0px;
+
+    	position: fixed;
+	bottom: 0;
 }
 
 .footer-distributed .footer-left,
@@ -308,6 +311,7 @@ footer{
 
 	.footer-distributed{
 		font: bold 14px sans-serif;
+        position:fixed;
 	}
 
 	.footer-distributed .footer-left,
@@ -357,4 +361,10 @@ footer{
     z-index: 9;
     width: 20%; 
 }
+}
+
+
+.jumbotron {
+    background-color:#1ABC9C !important; 
+    color:#fff;
 }

@@ -1,0 +1,42 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="GameTracking.AdminPanel.Admin" %>
+
+<%--- register user controls ---%>
+<%@ Register Src="~/User_Controls/NavbarAdmin.ascx" TagName="Navbar" TagPrefix="bs3" %>
+<%@ Register Src="~/User_Controls/Footer.ascx" TagName="Footer" TagPrefix="bs3" %>
+<%@ Register Src="~/User_Controls/Jumbotron.ascx" TagName="Jumbotron" TagPrefix="bs3" %>
+
+<!-- page start -->
+<!DOCTYPE html>
+<html lang="en"><!--html start-->
+<head runat="server"><!--head start-->
+    <!-- meta declaration -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+    <!-- CSS Section -->
+
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="../Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <link href="../Content/font-awesome.min.css" rel="stylesheet" />
+    <link href="../Content/app.css" rel="stylesheet" />
+    <!-- google font -->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head><!--head end-->
+<body><!-- body start-->
+    <form id="form1" runat="server"><!-- form start-->
+        <bs3:Navbar runat="server" ID="PrimaryNav"></bs3:Navbar><!-- navigation bar :: usercontrol-->
+        <div>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form><!-- form end-->
+    <bs3:Footer runat="server" ID="Footer"></bs3:Footer><!-- footer bar :: usercontrol-->
+    <!-- JavaScript -->
+    <script src="../Scripts/jquery-2.2.3.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../    Scripts/app.js"></script>
+</body><!-- body end-->
+</html><!-- html end-->
