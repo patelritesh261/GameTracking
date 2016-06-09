@@ -372,3 +372,9 @@ footer{
     color:#fff;
     text-align:center;
 }
+
+/* table css*/
+.thhead-inverse {
+     background-color: #1ABC9C;
+     color:#FFF;
+}

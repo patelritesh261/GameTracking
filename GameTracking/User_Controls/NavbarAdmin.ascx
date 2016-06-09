@@ -28,7 +28,7 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="../AdminPanel/Game.aspx">Add Game</a></li>
-          <li><a href="#">Display Games</a></li>
+          <li><a href="../AdminPanel/GameDetails.aspx">Display Games</a></li>
          
         </ul>
       </li>
@@ -37,7 +37,7 @@
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
           <li><a href="../AdminPanel/Team.aspx">Add Team</a></li>
-          <li><a href="#">Display Teams</a></li>
+          <li><a href="../AdminPanel/TeamDetails.aspx">Display Teams</a></li>
          
         </ul>
       </li>

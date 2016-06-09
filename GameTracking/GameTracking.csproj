@@ -93,7 +93,9 @@
   <ItemGroup>
     <Content Include="AdminPanel\Dashboard.aspx" />
     <Content Include="AdminPanel\Game.aspx" />
+    <Content Include="AdminPanel\GameDetails.aspx" />
     <Content Include="AdminPanel\Team.aspx" />
+    <Content Include="AdminPanel\TeamDetails.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Registration.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -166,12 +168,26 @@
     <Compile Include="AdminPanel\Game.aspx.designer.cs">
       <DependentUpon>Game.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminPanel\GameDetails.aspx.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\GameDetails.aspx.designer.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AdminPanel\Team.aspx.cs">
       <DependentUpon>Team.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="AdminPanel\Team.aspx.designer.cs">
       <DependentUpon>Team.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\TeamDetails.aspx.cs">
+      <DependentUpon>TeamDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\TeamDetails.aspx.designer.cs">
+      <DependentUpon>TeamDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
