@@ -40,17 +40,14 @@
 
                     <br />
                     <div class="form-group">
-                        <div class="col-md-3">
-                            &nbsp;
-                        </div>
+                        
                         <div class="col-md-6">
 
                             <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Add" OnClick="btnsubmit_Click" />
                             &nbsp;  &nbsp;
                                 <a href="Game.aspx" class="btn btn-sample-inverse">Cancel</a>
                         </div>
-                        <div class="col-md-offset-1 ">
-                        </div>
+                       
                     </div>
                 </form>
                 <!-- end Game form -->

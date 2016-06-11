@@ -18,7 +18,8 @@ namespace GameTracking.AdminPanel
             // if loading the page for the first time, populate the game grid
             if (!IsPostBack)
             {
-                Session["SortColumn"] = "GID"; // default sort column
+                lblMsg.Text = "";
+               Session["SortColumn"] = "GID"; // default sort column
                 Session["SortDirection"] = "ASC";
                 // Get the game data
                 this.GetGames();
@@ -40,21 +41,9 @@ namespace GameTracking.AdminPanel
                 if (Session["GameMsg"] != null) {
                     lblMsg.Text = Session["GameMsg"].ToString();
                     alertMsg.Visible = true;
+                Session["GameMsg"] = null;
                 }
-            if (Request.QueryString.Count > 0)
-            {
-                if (Request.QueryString["flag"] == "True")
-                {
-                    lblMsg.Text = "Your Record Added Succeessfully.";
-                    alertMsg.Visible = true;
-                   
-                }
-                else {
-                    lblMsg.Text = "Your Record Updated Succeessfully.";
-                    alertMsg.Visible = true;
-                   
-                }
-            }
+            
         }
 
         /**

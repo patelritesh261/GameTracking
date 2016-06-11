@@ -44,7 +44,7 @@ namespace GameTracking.AdminPanel
                     {
                         txtGameName.Text = updatedStudent.Name;
                         txtshortdesc.Text = updatedStudent.Description;
-
+                        btnsubmit.Text = "Update";
                     }
                 }
             }
@@ -56,7 +56,7 @@ namespace GameTracking.AdminPanel
 
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
-            Boolean flag = true;
+            
             // Use EF to connect to the server
             using (DefaultConnection db = new DefaultConnection())
             {
@@ -75,7 +75,7 @@ namespace GameTracking.AdminPanel
                     newGame = (from game in db.Games1
                                where game.GID == GID
                                select game).FirstOrDefault();
-                    flag = false;
+                   
                     Session["GameMsg"] = "Your Record Updated Succeessfully.";
                 }
 
@@ -89,7 +89,7 @@ namespace GameTracking.AdminPanel
                 if (GID == 0)
                 {
                     db.Games1.Add(newGame);
-                    flag = true;
+                   
                     Session["GameMsg"] = "Your Record Added Succeessfully.";
                 }
 
