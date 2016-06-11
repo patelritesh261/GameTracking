@@ -13,39 +13,39 @@ namespace GameTracking.AdminPanel {
     public partial class Game {
         
         /// <summary>
-        /// txtGameName control.
+        /// alertMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtGameName;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl alertMsg;
         
         /// <summary>
-        /// txtshortdesc control.
+        /// lblMsg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtshortdesc;
+        protected global::System.Web.UI.WebControls.Label lblMsg;
         
         /// <summary>
-        /// btnsubmit control.
+        /// PageSizeDropDownList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnsubmit;
+        protected global::System.Web.UI.WebControls.DropDownList PageSizeDropDownList;
         
         /// <summary>
-        /// btnCancel control.
+        /// gdGames control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.GridView gdGames;
     }
 }
