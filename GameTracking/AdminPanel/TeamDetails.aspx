@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Team Details" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="TeamDetails.aspx.cs" Inherits="GameTracking.AdminPanel.TeamDetails" %>
+﻿<%@ Page Title="Team Details" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="TeamDetails.aspx.cs" EnableEventValidation="false" Inherits="GameTracking.AdminPanel.TeamDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

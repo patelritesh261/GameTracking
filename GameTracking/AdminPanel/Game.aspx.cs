@@ -89,7 +89,7 @@ namespace GameTracking.AdminPanel
             // get the selected GID using the Grid's DataKey collection
             int GID = Convert.ToInt32(gdGames.DataKeys[selectedRow].Values["GID"]);
 
-            // use EF to find the selected student in the DB and remove it
+            // use EF to find the selected game in the DB and remove it
             using (DefaultConnection db = new DefaultConnection())
             {
                 // create object of the Game class and store the query string inside of it
