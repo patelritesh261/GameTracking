@@ -1,89 +1,60 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="GameRecord.aspx.cs" Inherits="GameTracking.AdminPanel.GameRecord" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-   <div class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                <h1>Add Team</h1>
-
-                <hr style="width: 100%; color: black; height: 3px; background-color: black;" />
-      <!-- start Game Record form -->
-                <form role="form" method="post" >
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Game Date : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                            <asp:Calendar ID="clGameDate" runat="server"></asp:Calendar>
-                        </div>
-
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Game Name : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                            <asp:DropDownList ID="ddlGameName" CssClass="dropdown-toggle" runat="server"></asp:DropDownList>
-                        </div>
-
-                    </div>
-                    
-                     <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Teams : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                           <asp:DropDownList ID="ddlTeamName1" CssClass="dropdown-toggle" runat="server"></asp:DropDownList> V/S
-                            <asp:DropDownList ID="ddlTeamName2" CssClass="dropdown-toggle" runat="server"></asp:DropDownList>
-                        </div>
-
-                    </div>
-                     <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Winning Team : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                           <asp:DropDownList ID="ddlTeamList" CssClass="dropdown-toggle" runat="server"></asp:DropDownList>
-                           
-                        </div>
-
-                    </div>
-                 
-                     <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Spectators : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                            <asp:TextBox ID="txtSpectators" runat="server" required="true" Width="50%" CssClass="form-control" placeholder="Spectators"  CausesValidation="True"></asp:TextBox> 
-                        </div>
-
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Win Team Score : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                            <asp:TextBox ID="txtWinTeamScore" runat="server" required="true" CssClass="form-control" Width="50%" placeholder="Winning Team Score"  CausesValidation="True"></asp:TextBox> 
-                            
-                        </div>
-
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Lose Team Score : </label>
-                        </div>
-                        <div class="col-md-offset-2 ">
-                        <asp:TextBox ID="txtLoseTeamScore" runat="server" required="true" CssClass="form-control" Width="50%" placeholder="loosing Team Score"  CausesValidation="True"></asp:TextBox> 
-                        </div>
-
-                    </div>
-                       <div class="form-group">
-                        <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Add" />
-                         <asp:Button ID="btnCancel" CssClass="btn btn-sample-inverse" runat="server" Text="Cancel" />
-                    </div>
-                </form>
-                 <!-- end Game form -->
+            <div class="col-md-offset-2 col-md-8">
+                <h1>Game Records List</h1>
+                <div id="alertMsg" runat="server" visible="false" class="alert btn-sample btn-sm alert-dismissible " role="alert">
+                    <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                 </div>
-            </div></div>
+                <div class="col-md-12">
+                    <a href="TeamDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i>Add Game Records</a>
+
+
+
+
+                    <label for="PageSizeDropDownList">Records per Page: </label>
+                    <asp:DropDownList ID="PageSizeDropDownList" runat="server"
+                        AutoPostBack="true" CssClass="btn btn-default btn-sm  dropdown-toggle"
+                        OnSelectedIndexChanged="PageSizeDropDownList_SelectedIndexChanged">
+                        <asp:ListItem Text="3" Value="3" />
+                        <asp:ListItem Text="5" Value="5" />
+                        <asp:ListItem Text="10" Value="10" />
+                        <asp:ListItem Text="All" Value="10000" />
+                    </asp:DropDownList>
+
+                </div>
+                <div>
+                    <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
+                        ID="gdGameRecord" AutoGenerateColumns="false" DataKeyNames="GRID"
+                        OnRowDeleting="gdGameRecord_RowDeleting" AllowPaging="true" PageSize="3"
+                        OnPageIndexChanging="gdGameRecord_PageIndexChanging" AllowSorting="true"
+                        OnSorting="gdGameRecord_Sorting" OnRowDataBound="gdGameRecord_RowDataBound"
+                        PagerStyle-CssClass="pagination-ys">
+                        <Columns>
+
+                            <asp:BoundField DataField="Date" HeaderText="Date" Visible="true" SortExpression="Date" DataFormatString="{0:MMM dd, yyyy}" />
+                            <asp:BoundField DataField="GName" HeaderText="Game" Visible="true" SortExpression="GName" />
+                            <asp:BoundField DataField="TeamN1" HeaderText="Team 1" Visible="true" SortExpression="TeamN1" />
+                            <asp:BoundField DataField="TeamN2" HeaderText="Team 2" Visible="true" SortExpression="TeamN2" />
+                            <asp:BoundField DataField="WTeamN" HeaderText="Winner Team" Visible="true" SortExpression="WTeamN" />
+                            <asp:BoundField DataField="Sepectators" HeaderText="Spectators" Visible="true" SortExpression="Sepectators" />
+                            <asp:BoundField DataField="T1WinScore" HeaderText="T1 Score" Visible="true" SortExpression="T1WinScore" />
+                            <asp:BoundField DataField="T2WinScore" HeaderText="T2 Score" Visible="true" SortExpression="T2WinScore" />
+                            <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> "
+                                NavigateUrl="~/AdminPanel/GameDetails.aspx.cs" ControlStyle-CssClass="btn btn-sample btn-sm" runat="server"
+                                DataNavigateUrlFields="GRID" DataNavigateUrlFormatString="GameDetails.aspx?GRID={0}" />
+                            <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> "
+                                ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-sample-inverse btn-sm" />
+                        </Columns>
+                    </asp:GridView>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

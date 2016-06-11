@@ -9,7 +9,7 @@
 --%>
 <!-- start footer -->
 
-<footer class="footer-distributed navbar-fixed-bottom">
+<footer class="footer-distributed ">
     <div class="footer-left">
         <h3>
             <i class="fa fa-futbol-o fa-lg"></i>GameTracking</h3>

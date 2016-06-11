@@ -109,6 +109,7 @@
     <Content Include="AdminPanel\Game.aspx" />
     <Content Include="AdminPanel\GameDetails.aspx" />
     <Content Include="AdminPanel\GameRecord.aspx" />
+    <Content Include="AdminPanel\GameRecordDetails.aspx" />
     <Content Include="AdminPanel\Team.aspx" />
     <Content Include="AdminPanel\TeamDetails.aspx" />
     <Content Include="Login.aspx" />
@@ -213,6 +214,13 @@
     </Compile>
     <Compile Include="AdminPanel\GameRecord.aspx.designer.cs">
       <DependentUpon>GameRecord.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanel\GameRecordDetails.aspx.cs">
+      <DependentUpon>GameRecordDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPanel\GameRecordDetails.aspx.designer.cs">
+      <DependentUpon>GameRecordDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdminPanel\Team.aspx.cs">
       <DependentUpon>Team.aspx</DependentUpon>
