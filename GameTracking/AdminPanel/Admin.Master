@@ -28,11 +28,12 @@
 <body><!-- body start-->
     <form id="form1" runat="server"><!-- form start-->
         <bs3:Navbar runat="server" ID="PrimaryNav"></bs3:Navbar><!-- navigation bar :: usercontrol-->
-        <div style="min-height:60%;padding-bottom:10px;">
+       
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
+       
     </form><!-- form end-->
+
     <bs3:Footer runat="server" ID="Footer"></bs3:Footer><!-- footer bar :: usercontrol-->
     <!-- JavaScript -->
     <script src="../Scripts/jquery-2.2.3.min.js"></script>

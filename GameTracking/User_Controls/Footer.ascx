@@ -8,7 +8,8 @@
  *  
 --%>
 <!-- start footer -->
-<footer class="footer-distributed">
+
+<footer class="footer-distributed navbar-fixed-bottom">
     <div class="footer-left">
         <h3>
             <i class="fa fa-futbol-o fa-lg"></i>GameTracking</h3>
@@ -34,4 +35,5 @@
         </div>
     </div>
 </footer>
+    
 <!-  end footer -->
