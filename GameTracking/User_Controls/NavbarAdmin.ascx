@@ -45,8 +45,8 @@
         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Game Record
         <span class="caret"></span></a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add GameRecord</a></li>
-          <li><a href="#">Display GamesRecords</a></li>
+          <li><a href="../AdminPanel/GameRecord.aspx">Add GameRecord</a></li>
+          <li><a href="../AdminPanel/GameRecord.aspx">Display GamesRecords</a></li>
          
         </ul>
       </li>
