@@ -220,51 +220,119 @@ namespace GameTracking.AdminPanel
         */
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
+            int rowCount;
             //connect to EF DB
             using (DefaultConnection db = new DefaultConnection())
             {
+                if (Convert.ToInt32(txtWinTeamScore.Text)>Convert.ToInt32(txtLoseTeamScore.Text )) {
+                    if ((ddlTeamName1.SelectedValue != ddlTeamName2.SelectedValue))
+                    {
+                        int GRID = 0;
+                        //define onject of Game record model
+                        GameRecords newGameRecord = new GameRecords();
 
-                int GRID = 0;
-                //define onject of Game record model
-                GameRecords newGameRecord = new GameRecords();
+                        if (Request.QueryString.Count > 0)
+                        {
+                            GRID = Convert.ToInt32(Request.QueryString["GRID"]);
+                            newGameRecord = (from record in db.GameRecords1
+                                             where record.GRID == GRID
+                                             select record).FirstOrDefault();
+                            Session["GRMsg"] = "Your Record Updated Succeessfully.";
+                        }
 
-                if (Request.QueryString.Count > 0)
-                {
-                    GRID = Convert.ToInt32(Request.QueryString["GRID"]);
-                    newGameRecord = (from record in db.GameRecords1
-                                     where record.GRID == GRID
-                                     select record).FirstOrDefault();
-                    Session["GRMsg"] = "Your Record Updated Succeessfully.";
-                }
+                        newGameRecord.Date = Convert.ToDateTime(txtGameDate.Text.ToString());
+                        newGameRecord.Gid = Convert.ToInt32(ddlGameName.SelectedValue);
+                        newGameRecord.Team1 = Convert.ToInt32(ddlTeamName1.SelectedValue);
+                        newGameRecord.Team2 = Convert.ToInt32(ddlTeamName2.SelectedValue);
+                        newGameRecord.WTeam = Convert.ToInt32(ddlWinTeam.SelectedValue);
+                        newGameRecord.Sepectators = Convert.ToInt32(txtSpectators.Text.ToString().Trim());
+                        newGameRecord.T1WinScore = Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim());
+                        newGameRecord.T2WinScore = Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
+                        newGameRecord.T1LoseScore = Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
+                        newGameRecord.T2LoseScore = Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim());
+                        newGameRecord.TotalScore = Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim()) + Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
+                        CultureInfo ciCurr = CultureInfo.CurrentCulture;
+                        newGameRecord.Week = Convert.ToInt32(ciCurr.Calendar.GetWeekOfYear(Convert.ToDateTime(txtGameDate.Text.ToString()), CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday).ToString());
 
-                newGameRecord.Date = Convert.ToDateTime(txtGameDate.Text.ToString());
-                newGameRecord.Gid = Convert.ToInt32(ddlGameName.SelectedValue);
-                newGameRecord.Team1 = Convert.ToInt32(ddlTeamName1.SelectedValue);
-                newGameRecord.Team2 = Convert.ToInt32(ddlTeamName2.SelectedValue);
-                newGameRecord.WTeam = Convert.ToInt32(ddlWinTeam.SelectedValue);
-                newGameRecord.Sepectators = Convert.ToInt32(txtSpectators.Text.ToString().Trim());
-                newGameRecord.T1WinScore = Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim());
-                newGameRecord.T2WinScore = Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
-                newGameRecord.T1LoseScore= Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
-                newGameRecord.T2LoseScore= Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim());
-                newGameRecord.TotalScore= Convert.ToInt32(txtWinTeamScore.Text.ToString().Trim())+ Convert.ToInt32(txtLoseTeamScore.Text.ToString().Trim());
-                CultureInfo ciCurr = CultureInfo.CurrentCulture;
-                newGameRecord.Week =Convert.ToInt32( ciCurr.Calendar.GetWeekOfYear(Convert.ToDateTime(txtGameDate.Text.ToString()), CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday).ToString());
+                        //check insert of update operation
+                        if (GRID == 0)
+                        {
 
-                //check insert of update operation
-                if (GRID == 0) {
-                    db.GameRecords1.Add(newGameRecord);
+                            //check record is already in DB
+                            rowCount = checkAlready(newGameRecord);
+                            if (rowCount == 0)
+                            {
+                                db.GameRecords1.Add(newGameRecord);
+                                Session["GRMsg"] = "Your Record Added Succeessfully.";
+                                //save our change
+                                db.SaveChanges();
 
-                    Session["GRMsg"] = "Your Record Added Succeessfully.";
-                }
+                                // Redirect back to the updated games page
+                                Response.Redirect("~/AdminPanel/GameRecord.aspx");
+                            }
+                            else
+                            {
+                                lblMsg.Text = "Record has been already added.";
+                                alertMsg.Visible = true;
 
-                //save our change
-                db.SaveChanges();
+                            }
 
-                // Redirect back to the updated games page
-                Response.Redirect("~/AdminPanel/GameRecord.aspx");
+
+
+                        }
+                        else
+                        {
+                            //save our change
+                            db.SaveChanges();
+
+                            // Redirect back to the updated games page
+                            Response.Redirect("~/AdminPanel/GameRecord.aspx");
+                        }
+                    }
+                    else {
+                        lblMsg.Text = "Team1 and Team2 have different value.";
+                        ddlTeamName1.Focus();
+                        alertMsg.Visible = true;
+                    }
+
+               
+            }
+            else{
+                    lblMsg.Text = "Winning team has always higher score.";
+                    txtWinTeamScore.Focus();
+                    alertMsg.Visible = true;
+            }
 
             }
+        }
+
+        private int checkAlready(GameRecords newGameRecord)
+        {
+            int rowCount = 0;
+            try {
+               
+                using (DefaultConnection db =new DefaultConnection())
+                {
+                    //write query
+                    var recordAlready=(from record in db.GameRecords1
+                                      where record.Date==newGameRecord.Date
+                                      && record.Gid==newGameRecord.Gid
+                                      && record.Team1==newGameRecord.Team1
+                                      && record.Team2==newGameRecord.Team2
+                                      && record.WTeam==newGameRecord.WTeam
+                                      select record).First();
+                    if (recordAlready != null )
+                    {
+                        rowCount = 1;
+
+                    }
+                }
+               
+                    
+            }
+            catch (Exception e)
+            { }
+            return rowCount;
         }
     }
     

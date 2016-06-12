@@ -8,6 +8,10 @@
                 <h1>Game Record</h1>
 
                 <hr style="width: 100%; color: black; height: 3px; background-color: black;" />
+                  <div id="alertMsg" runat="server" visible="false" class="alert btn-sample btn-sm alert-dismissible " role="alert">
+                    <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+                </div>
       <!-- start Game Record form -->
                 <form role="form" method="post" >
                     <div class="form-group">
@@ -109,7 +113,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Win Team Score : </label>
+                            <label class="control-label" for="exampleInputEmail">Winning Team Score : </label>
                         </div>
                         <div class="col-md-5 ">
                             <asp:TextBox ID="txtWinTeamScore" runat="server" required="true" CssClass="form-control"  placeholder="Winning Team Score"  CausesValidation="True"></asp:TextBox> 
@@ -124,10 +128,10 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Lose Team Score : </label>
+                            <label class="control-label" for="exampleInputEmail">Loosing Team Score : </label>
                         </div>
                         <div class="col-md-5 ">
-                        <asp:TextBox ID="txtLoseTeamScore" runat="server" required="true" CssClass="form-control" placeholder="loosing Team Score"  CausesValidation="True"></asp:TextBox> 
+                        <asp:TextBox ID="txtLoseTeamScore" runat="server" required="true" CssClass="form-control" placeholder="Loosing Team Score"  CausesValidation="True"></asp:TextBox> 
                         </div>
                         <div class="col-md-offset-0 ">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtLoseTeamScore"  SetFocusOnError="true"  CssClass="btn btn-sample" ErrorMessage="Enter Score"></asp:RequiredFieldValidator>
