@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="GameRecordDetails.aspx.cs" Inherits="GameTracking.AdminPanel.GameRecordDetails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="GameRecordDetails.aspx.cs" Inherits="GameTracking.AdminPanel.GameRecordDetails" EnableEventValidation="false" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -29,7 +29,8 @@
                             <label class="control-label" for="exampleInputEmail">Game Name : </label>
                         </div>
                         <div class="col-md-5 ">
-                            <asp:DropDownList ID="ddlGameName"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%">
+                            <asp:DropDownList ID="ddlGameName"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle"
+                                 Width="100%" OnSelectedIndexChanged="ddlGameName_SelectedIndexChanged" AutoPostBack="true">
                                 <asp:ListItem Text="Select Game" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
@@ -44,8 +45,10 @@
                             <label class="control-label" for="exampleInputEmail">Team 1 : </label>
                         </div>
                         <div class="col-md-5 ">
-                           <asp:DropDownList ID="ddlTeamName1"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%">
-                               <asp:ListItem Text="Select Team1" Value="0"></asp:ListItem>
+                           <asp:DropDownList ID="ddlTeamName1" Enabled="false"  runat="server" 
+                               CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%"
+                               AutoPostBack="true" OnSelectedIndexChanged="ddlTeamName1_SelectedIndexChanged">
+                               <asp:ListItem Text="Select Team" Value="0"></asp:ListItem>
                            </asp:DropDownList>
                            
                         </div>
@@ -62,8 +65,10 @@
                             <label class="control-label" for="exampleInputEmail">Team 2 : </label>
                         </div>
                         <div class="col-md-5 ">
-                           <asp:DropDownList ID="ddlTeamName2"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%">
-                                <asp:ListItem Text="Select Team1" Value="0"></asp:ListItem>
+                           <asp:DropDownList ID="ddlTeamName2" Enabled="false" runat="server"
+                                CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%" AutoPostBack="true"
+                               OnSelectedIndexChanged="ddlTeamName2_SelectedIndexChanged">
+                                <asp:ListItem Text="Select Team" Value="0"></asp:ListItem>
                             </asp:DropDownList>
                         </div>
                          <div class="col-md-offset-0 ">
@@ -77,7 +82,7 @@
                             <label class="control-label" for="exampleInputEmail">Winning Team : </label>
                         </div>
                         <div class="col-md-5 ">
-                           <asp:DropDownList ID="ddlWinTeam"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%">
+                           <asp:DropDownList ID="ddlWinTeam" Enabled="false"  runat="server" CssClass="btn btn-default btn-sm  dropdown-toggle" Width="100%">
                                <asp:ListItem Text="Select Winning Team" Value="0"></asp:ListItem>
                            </asp:DropDownList>
                            
@@ -132,9 +137,9 @@
 
                     </div>
                        <div class="form-group">
-                        <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Add" />
+                        <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Add" OnClick="btnsubmit_Click" />
                            &nbsp;&nbsp;
-                           <a href="GameRecordDetails.aspx" class="btn btn-sample-inverse">Cancel</a>
+                           <a href="GameRecord.aspx" class="btn btn-sample-inverse">Cancel</a>
                         
                     </div>
                 </form>

@@ -12,7 +12,7 @@
                     <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
                 </div>
                 <div class="col-md-12">
-                    <a href="TeamDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i>Add Game Records</a>
+                    <a href="GameRecordDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i>Add Game Records</a>
 
 
 
@@ -46,8 +46,8 @@
                             <asp:BoundField DataField="T1WinScore" HeaderText="T1 Score" Visible="true" SortExpression="T1WinScore" />
                             <asp:BoundField DataField="T2WinScore" HeaderText="T2 Score" Visible="true" SortExpression="T2WinScore" />
                             <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> "
-                                NavigateUrl="~/AdminPanel/GameDetails.aspx.cs" ControlStyle-CssClass="btn btn-sample btn-sm" runat="server"
-                                DataNavigateUrlFields="GRID" DataNavigateUrlFormatString="GameDetails.aspx?GRID={0}" />
+                                NavigateUrl="~/AdminPanel/GameRecordDetails.aspx.cs" ControlStyle-CssClass="btn btn-sample btn-sm" runat="server"
+                                DataNavigateUrlFields="GRID" DataNavigateUrlFormatString="GameRecordDetails.aspx?GRID={0}" />
                             <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> "
                                 ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-sample-inverse btn-sm" />
                         </Columns>

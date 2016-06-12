@@ -35,11 +35,11 @@ namespace GameTracking.AdminPanel
         private void getMessage()
         {
 
-            if (Session["TeamMsg"] != null)
+            if (Session["GRMsg"] != null)
             {
-                lblMsg.Text = Session["TeamMsg"].ToString();
+                lblMsg.Text = Session["GRMsg"].ToString();
                 alertMsg.Visible = true;
-                Session["TeamMsg"] = null;
+                Session["GRMsg"] = null;
             }
 
         }
@@ -102,6 +102,8 @@ namespace GameTracking.AdminPanel
                 db.SaveChanges();
                 //refresh grid
                 GetGameRecords();
+                Session["GRMsg"] = "Your Record Delete Succeessfully.";
+                getMessage();
             }
         }
         /**
