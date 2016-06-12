@@ -11,6 +11,10 @@
 
 
                 <hr />
+                 <div id="alertMsg" runat="server" visible="false" class="alert btn-sample btn-sm alert-dismissible " role="alert">
+                    <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>
+                </div>
                 <!-- start Game form -->
 
                 <form role="form" method="post">

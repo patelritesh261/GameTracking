@@ -69,7 +69,7 @@ namespace GameTracking.AdminPanel
                         ddlWinTeam.SelectedValue = gameRecords.WTeam.ToString();
                         ddlWinTeam.Enabled = true;
 
-
+                        btnsubmit.Text = "Update";
 
                     }
                 }
@@ -237,6 +237,7 @@ namespace GameTracking.AdminPanel
                             newGameRecord = (from record in db.GameRecords1
                                              where record.GRID == GRID
                                              select record).FirstOrDefault();
+                          
                             Session["GRMsg"] = "Your Record Updated Succeessfully.";
                         }
 
@@ -305,7 +306,14 @@ namespace GameTracking.AdminPanel
 
             }
         }
-
+        /**
+* <summary>
+* This method check if record already have in table.
+* </summary>
+* 
+* @method checkAlready
+* @returns {int}
+*/
         private int checkAlready(GameRecords newGameRecord)
         {
             int rowCount = 0;

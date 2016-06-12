@@ -56,7 +56,7 @@ namespace GameTracking.AdminPanel
 
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
-            
+            int rowCount;
             // Use EF to connect to the server
             using (DefaultConnection db = new DefaultConnection())
             {
@@ -88,18 +88,74 @@ namespace GameTracking.AdminPanel
 
                 if (GID == 0)
                 {
-                    db.Games1.Add(newGame);
-                   
-                    Session["GameMsg"] = "Your Record Added Succeessfully.";
+
+                    //check record is already in DB
+                    rowCount = checkAlready(newGame);
+                    if (rowCount == 0)
+                    {
+                        db.Games1.Add(newGame);
+
+                        Session["GameMsg"] = "Your Record Added Succeessfully.";
+                        // save our changes - also updates and inserts
+                        db.SaveChanges();
+
+                        // Redirect back to the updated games page
+                        Response.Redirect("~/AdminPanel/Game.aspx");
+                    }
+                    else
+                    {
+                        lblMsg.Text = "Record has been already added.";
+                        alertMsg.Visible = true;
+
+                    }
+
+
+
+                }
+                else {
+                    // save our changes - also updates and inserts
+                    db.SaveChanges();
+
+                    // Redirect back to the updated games page
+                    Response.Redirect("~/AdminPanel/Game.aspx");
                 }
 
 
-                // save our changes - also updates and inserts
-                db.SaveChanges();
-
-                // Redirect back to the updated games page
-                Response.Redirect("~/AdminPanel/Game.aspx");
+                
             }
+        }
+ /* <summary>
+* This method check if record already have in table.
+* </summary>
+* 
+* @method checkAlready
+* @returns {int
+    }
+*/
+        private int checkAlready(Games newGame)
+        {
+            int rowCount = 0;
+            try
+            {
+
+                using (DefaultConnection db = new DefaultConnection())
+                {
+                    //write query
+                    var recordAlready = (from record in db.Games1
+                                         where record.Name == newGame.Name
+                                         select record).First();
+                    if (recordAlready != null)
+                    {
+                        rowCount = 1;
+
+                    }
+                }
+
+
+            }
+            catch (Exception e)
+            { }
+            return rowCount;
         }
 
         protected void btnCancel_Click(object sender, EventArgs e)

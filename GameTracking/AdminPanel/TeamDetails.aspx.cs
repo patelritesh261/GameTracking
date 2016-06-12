@@ -96,6 +96,7 @@ namespace GameTracking.AdminPanel
 
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
+            int rowCount;
             // Use EF to connect to the server
             using (DefaultConnection db = new DefaultConnection())
             {
@@ -124,17 +125,66 @@ namespace GameTracking.AdminPanel
                 //check operation insert or update
                 if (TID == 0)
                 {
-                    db.Teams1.Add(newTeam);
+                    //check record is already in DB
+                    rowCount = checkAlready(newTeam);
+                    if (rowCount == 0)
+                    {
+                        db.Teams1.Add(newTeam);
 
-                    Session["TeamMsg"] = "Your Record Added Succeessfully.";
+                        Session["TeamMsg"] = "Your Record Added Succeessfully.";
+                        //save our change
+                        db.SaveChanges();
+
+                        // Redirect back to the updated games page
+                        Response.Redirect("~/AdminPanel/Team.aspx");
+                    }
+                    else {
+                        lblMsg.Text = "Record has been already added.";
+                        alertMsg.Visible = true;
+                    }
+                }
+                else
+                {
+                    //save our change
+                    db.SaveChanges();
+
+                    // Redirect back to the updated games page
+                    Response.Redirect("~/AdminPanel/Team.aspx");
+                }
+            }
+        }
+        /* <summary>
+* This method check if record already have in table.
+* </summary>
+* 
+* @method checkAlready
+* @returns {int
+    }
+*/
+        private int checkAlready(Teams newGame)
+        {
+            int rowCount = 0;
+            try
+            {
+
+                using (DefaultConnection db = new DefaultConnection())
+                {
+                    //write query
+                    var recordAlready = (from record in db.Teams1
+                                         where record.Name == newGame.Name
+                                         select record).First();
+                    if (recordAlready != null)
+                    {
+                        rowCount = 1;
+
+                    }
                 }
 
-                //save our change
-                db.SaveChanges();
 
-                // Redirect back to the updated games page
-                Response.Redirect("~/AdminPanel/Team.aspx");
             }
+            catch (Exception e)
+            { }
+            return rowCount;
         }
     }
 }
