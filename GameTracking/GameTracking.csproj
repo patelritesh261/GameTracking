@@ -151,6 +151,7 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="AdminPanel\Admin.Master" />
+    <Content Include="WebForm1.aspx" />
     <EntityDeploy Include="Models\GameModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>GameModel.Designer.cs</LastGenOutput>
@@ -323,6 +324,13 @@
     </Compile>
     <Compile Include="User_Controls\NavbarAdmin.ascx.designer.cs">
       <DependentUpon>NavbarAdmin.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

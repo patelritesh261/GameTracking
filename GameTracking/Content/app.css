@@ -138,14 +138,45 @@ fieldset[disabled] .btn-sample-inverse.active {
   color: #3D5C6E; 
   background-color: #ffffff; 
 }
-
-
+/*
+* css for card poster
+*/
+.card {
+background:#fff;
+margin:15px;
+padding:0px;
+box-shadow: 2px 2px 15px #888888;
+}
+        
+.card-header{
+     font: bold 22px/45px 'Open Sans', Sans-Serif;
+        text-align:center;
+    background:#3D566E;
+    color:#fff;
+}
+.card-text,.card-title {
+    padding-left:5%;
+}
+.card-title {
+    font-weight:bold;
+}
+.card-footer {
+    font: bold 22px/45px 'Open Sans', Sans-Serif;
+        text-align:center;
+    background:#1ABC9C;
+    color:#fff;
+}
 
 /* Typography*/
 h5 span {
     color:red;
 }
-
+.card a{
+    color:#fff;
+}
+.card h4 a{
+    color:#000;
+}
 
 /*
 * footers are fixed to the bottom of the page
