@@ -40,11 +40,18 @@
                         <asp:BoundField DataField="Name" HeaderText="Name"  Visible="true" SortExpression="Name" />
                         <asp:BoundField DataField="Description" HeaderText="Description" Visible="true" />
 
-                        <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit"
+                        <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i>"
                             NavigateUrl="~/AdminPanel/GameDetails.aspx.cs" ControlStyle-CssClass="btn btn-sample btn-sm" runat="server"
                             DataNavigateUrlFields="GID" DataNavigateUrlFormatString="GameDetails.aspx?GID={0}" />
-                        <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> Delete"
-                            ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-sample-inverse btn-sm" />
+                       
+                     <asp:TemplateField HeaderText="Delete">
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" ID="DeleteButton"
+                                    CommandName="delete"
+                                    Text="<i class='fa fa-trash-o fa-lg'></i>" Class="btn btn-sample-inverse btn-sm"
+                                    OnClientClick="if (!window.confirm('Are you sure you want to delete this item?')) return false;" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                 </asp:GridView>
                </div> 

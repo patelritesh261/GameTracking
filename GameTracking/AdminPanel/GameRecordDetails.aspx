@@ -116,7 +116,7 @@
                             <label class="control-label" for="exampleInputEmail">Winning Team Score : </label>
                         </div>
                         <div class="col-md-5 ">
-                            <asp:TextBox ID="txtWinTeamScore" runat="server" required="true" CssClass="form-control"  placeholder="Winning Team Score"  CausesValidation="True"></asp:TextBox> 
+                            <asp:TextBox ID="txtWinTeamScore" TextMode="Number" runat="server" required="true" CssClass="form-control"  placeholder="Winning Team Score"  CausesValidation="True"></asp:TextBox> 
                             
                         </div>
                         <div class="col-md-offset-0 ">
@@ -131,7 +131,7 @@
                             <label class="control-label" for="exampleInputEmail">Loosing Team Score : </label>
                         </div>
                         <div class="col-md-5 ">
-                        <asp:TextBox ID="txtLoseTeamScore" runat="server" required="true" CssClass="form-control" placeholder="Loosing Team Score"  CausesValidation="True"></asp:TextBox> 
+                        <asp:TextBox ID="txtLoseTeamScore" TextMode="Number" runat="server" required="true" CssClass="form-control" placeholder="Loosing Team Score"  CausesValidation="True"></asp:TextBox> 
                         </div>
                         <div class="col-md-offset-0 ">
                             <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtLoseTeamScore"  SetFocusOnError="true"  CssClass="btn btn-sample" ErrorMessage="Enter Score"></asp:RequiredFieldValidator>

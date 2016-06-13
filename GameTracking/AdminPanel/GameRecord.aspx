@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-2 col-md-8">
+            <div class="col-md-offset-1 col-md-10">
                 <h1>Game Records List</h1>
                 <div id="alertMsg" runat="server" visible="false" class="alert btn-sample btn-sm alert-dismissible " role="alert">
                     <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -43,13 +43,19 @@
                             <asp:BoundField DataField="TeamN2" HeaderText="Team 2" Visible="true" SortExpression="TeamN2" />
                             <asp:BoundField DataField="WTeamN" HeaderText="Winner Team" Visible="true" SortExpression="WTeamN" />
                             <asp:BoundField DataField="Sepectators" HeaderText="Spectators" Visible="true" SortExpression="Sepectators" />
-                            <asp:BoundField DataField="T1WinScore" HeaderText="T1 Score" Visible="true" SortExpression="T1WinScore" />
-                            <asp:BoundField DataField="T2WinScore" HeaderText="T2 Score" Visible="true" SortExpression="T2WinScore" />
+                            <asp:BoundField DataField="T1WinScore" HeaderText="Winning Team Score" Visible="true" SortExpression="T1WinScore" />
+                            <asp:BoundField DataField="T2WinScore" HeaderText="Loosing Team Score" Visible="true" SortExpression="T2WinScore" />
                             <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> "
                                 NavigateUrl="~/AdminPanel/GameRecordDetails.aspx.cs" ControlStyle-CssClass="btn btn-sample btn-sm" runat="server"
                                 DataNavigateUrlFields="GRID" DataNavigateUrlFormatString="GameRecordDetails.aspx?GRID={0}" />
-                            <asp:CommandField HeaderText="Delete" DeleteText="<i class='fa fa-trash-o fa-lg'></i> "
-                                ShowDeleteButton="true" ButtonType="Link" ControlStyle-CssClass="btn btn-sample-inverse btn-sm" />
+                             <asp:TemplateField HeaderText="Delete">
+                            <ItemTemplate>
+                                <asp:LinkButton runat="server" ID="DeleteButton"
+                                    CommandName="delete"
+                                    Text="<i class='fa fa-trash-o fa-lg'></i>" Class="btn btn-sample-inverse btn-sm"
+                                    OnClientClick="if (!window.confirm('Are you sure you want to delete this item?')) return false;" />
+                            </ItemTemplate>
+                        </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>
