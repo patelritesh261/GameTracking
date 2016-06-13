@@ -13,8 +13,19 @@
     <div class="container">
         <div class="row">
             <div class="col-md-offset-1 col-md-11">
-                   <h1>Weekly Statistic</h1>
-                <asp:Repeater ID="rptGame" runat="server" > 
+                  <div class="col-md-12">
+                      <div class="col-md-1">
+                         <h1><i class="fa fa-hand-o-left" aria-hidden="true"></i></h1> 
+                      </div>
+                      <div class="col-md-9">
+                          <h1><center> Weekly Statistic</center></h1>
+                      </div>
+                      <div class="col-md-1">
+                         <h1> <i class="fa fa-hand-o-right" aria-hidden="true"></i></h1>
+                      </div>
+                  </div> 
+               <div class="col-md-12">
+                        <asp:Repeater ID="rptGame" runat="server" > 
 					<ItemTemplate >	
                            <div class="col-md-5 card text-xs-center">
                     <div class="card-header">
@@ -45,10 +56,10 @@
                    
                    
                 </asp:Repeater>
+               </div>
+            
               <div>
-                  <div class="col-md-1">
-                <asp:Button ID="btnprevious" runat="server" Text="<i class='fa fa-arrow-left fa-5x'></i>" />
-                      </div>
+                 
               </div>
              
                
