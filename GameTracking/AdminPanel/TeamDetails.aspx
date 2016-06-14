@@ -64,6 +64,7 @@
                      
                      
                     </div>
+                    <br />
                 </form>
                  <!-- end Game form -->
                 </div>

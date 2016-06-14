@@ -22,36 +22,14 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-                <li id="home" runat="server"><a href="../AdminPanel/Dashboard.aspx"><i class="fa fa-home fa-lg"></i> Dashboard</a></li>
-                <li class="dropdown"  >
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Game
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="../AdminPanel/Game.aspx">Add Game</a></li>
-          <li><a href="../AdminPanel/GameDetails.aspx">Display Games</a></li>
+                <li id="home" runat="server"><a href="../AdminPanel/Dashboard.aspx"><i class="fa fa-tachometer  fa-lg"></i> Dashboard</a></li>
          
-        </ul>
-      </li>
-                 <li class="dropdown"  >
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Team
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="../AdminPanel/Team.aspx">Add Team</a></li>
-          <li><a href="../AdminPanel/TeamDetails.aspx">Display Teams</a></li>
-         
-        </ul>
-      </li>
-                 <li class="dropdown"  >
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Game Record
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="../AdminPanel/GameRecordDetails.aspx">Add GameRecord</a></li>
-          <li><a href="../AdminPanel/GameRecord.aspx">Display GamesRecords</a></li>
-         
-        </ul>
-      </li>
-                <li id="login" runat="server"><a href="../AdminPanel/Game.aspx"><i class="fa fa-sign-in  fa-lg"></i> Team</a></li>
-                <li id="register" runat="server"><a href="#"><i class="fa fa-user-plus  fa-lg"></i> Gamerecord</a></li>
+              <li id="games" runat="server"><a href="../AdminPanel/Game.aspx"><i class="fa fa-gamepad  fa-lg" aria-hidden="true"></i> Games</a></li>
+                 <li id="teams" runat="server"><a href="../AdminPanel/Team.aspx"><i class="fa fa-users fa-lg" aria-hidden="true"></i> Teams</a></li>
+                <li id="gamerecord" runat="server"><a href="../AdminPanel/GameRecord.aspx"><i class="fa fa-trophy fa-lg" aria-hidden="true"></i> Game Records</a></li>
+                <li id="profile" runat="server"><a href="#"><i class="fa fa-user  fa-lg"></i> Profile</a></li>
+                <li id="login" runat="server"><a href="../AdminPanel/Game.aspx"><i class="fa fa-sign-out  fa-lg"></i> Logout</a></li>
+                
             </ul>
         </div>
         <!-- /.navbar-collapse -->

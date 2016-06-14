@@ -8,9 +8,10 @@
             <hr />
             <div class="col-md-4" >
                 
-                <bs3:Jumbotron runat="server" ID="Jumbotron1" >
+                <bs3:Jumbotron runat="server" ID="Jumbotron1"  >
         <BodyContent>
-            <h3 >Total No of Games</h3>
+            <h3 ><a href="Game.aspx" > <asp:Label ID="lblGames" runat="server"></asp:Label> <br /><i class="fa fa-gamepad  fa-lg" aria-hidden="true"></i></a></h3>
+          
         </BodyContent>
     </bs3:Jumbotron>
 
@@ -19,7 +20,7 @@
                 
                 <bs3:Jumbotron runat="server" ID="Jumbotron2">
         <BodyContent>
-            <h3>Total No of Games</h3>
+            <h3><a href="Team.aspx"> <asp:Label ID="lblTeams" runat="server"></asp:Label><br /><i class="fa fa-users  fa-lg" aria-hidden="true"></i></a></h3>
         </BodyContent>
     </bs3:Jumbotron>
 
@@ -28,7 +29,7 @@
                 
                 <bs3:Jumbotron runat="server" ID="Jumbotron3">
         <BodyContent>
-            <h3>Total No of Games</h3>
+            <h3><a href="GameRecord.aspx" > <asp:Label ID="lblGRecord" runat="server"></asp:Label><br /> <i class="fa fa-trophy  fa-lg" aria-hidden="true"></i></a></h3>
         </BodyContent>
     </bs3:Jumbotron>
 

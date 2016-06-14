@@ -12,6 +12,9 @@ body {
         color: #333333;
     background: #ffffff;
 }
+.container{
+    padding-bottom:15px;
+}
 /* css for navigation bar*/
 .navbar {
     position: relative;
@@ -170,6 +173,11 @@ box-shadow: 2px 2px 15px #888888;
 /* Typography*/
 h5 span {
     color:red;
+}
+h3 a {
+    font-size:40px;
+    text-align:center;
+    color:#fff;
 }
 .card a{
     color:#fff;

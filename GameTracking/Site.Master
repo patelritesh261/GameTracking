@@ -18,6 +18,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- add favicon -->
+    <link rel="shortcut icon" type="image/png" href="Assests/images/favicon.png"/>
     <title></title>
     <!-- CSS Section -->
     <link href="Content/bootstrap.min.css" rel="stylesheet" />

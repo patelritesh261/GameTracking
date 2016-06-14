@@ -22,6 +22,15 @@ namespace GameTracking.AdminPanel {
         protected global::GameTracking.User_Controls.Jumbotron Jumbotron1;
         
         /// <summary>
+        /// lblGames control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGames;
+        
+        /// <summary>
         /// Jumbotron2 control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace GameTracking.AdminPanel {
         protected global::GameTracking.User_Controls.Jumbotron Jumbotron2;
         
         /// <summary>
+        /// lblTeams control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTeams;
+        
+        /// <summary>
         /// Jumbotron3 control.
         /// </summary>
         /// <remarks>
@@ -38,5 +56,14 @@ namespace GameTracking.AdminPanel {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::GameTracking.User_Controls.Jumbotron Jumbotron3;
+        
+        /// <summary>
+        /// lblGRecord control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblGRecord;
     }
 }

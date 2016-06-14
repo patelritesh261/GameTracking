@@ -112,6 +112,7 @@
     <Content Include="AdminPanel\GameRecordDetails.aspx" />
     <Content Include="AdminPanel\Team.aspx" />
     <Content Include="AdminPanel\TeamDetails.aspx" />
+    <Content Include="Assests\images\favicon.png" />
     <Content Include="Login.aspx" />
     <Content Include="Models\GameModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -336,7 +337,6 @@
   <ItemGroup>
     <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Assests\images\" />
     <Folder Include="Assests\uploads\" />
   </ItemGroup>
   <ItemGroup>
