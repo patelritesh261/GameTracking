@@ -30,7 +30,7 @@
 <body><!-- body start-->
     <form id="form1" runat="server"><!-- form start-->
         <bs3:Navbar runat="server" ID="PrimaryNav"></bs3:Navbar><!-- navigation bar :: usercontrol-->
-       <div style="min-height:360px;">
+       <div style="min-height:606px;">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
        </div>
