@@ -141,6 +141,10 @@ fieldset[disabled] .btn-sample-inverse.active {
   color: #3D5C6E; 
   background-color: #ffffff; 
 }
+/*css for space between grid and heading*/
+.gridspace {
+    margin-top:6%;
+}
 /*
 * css for card poster
 */
@@ -171,6 +175,9 @@ box-shadow: 2px 2px 15px #888888;
 }
 
 /* Typography*/
+h1{
+    color:#1ABC9C;
+}
 h5 span {
     color:red;
 }

@@ -7,7 +7,7 @@
             <div class="col-md-offset-3 col-md-7">
                 <h1>Game Record</h1>
 
-                <hr style="width: 100%; color: black; height: 3px; background-color: black;" />
+                <hr />
                   <div id="alertMsg" runat="server" visible="false" class="alert btn-sample btn-sm alert-dismissible " role="alert">
                     <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <asp:Label ID="lblMsg" runat="server" Text=""></asp:Label>

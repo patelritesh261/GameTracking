@@ -7,12 +7,13 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-10">
                 <h1>Games List</h1>
+                <hr />
                    <div id="alertMsg" runat="server" visible="false"  class="alert btn-sample btn-sm alert-dismissible " role="alert">
                         <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                          <asp:Label ID="lblMsg"  runat="server"  Text=""></asp:Label>
                     </div>
                 <div class="col-md-12">
-                     <a href="GameDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i> Add Game</a>
+                     <a href="GameDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i>  Add Game</a>
                    
               
 
@@ -28,7 +29,7 @@
                     </asp:DropDownList>
              
          </div>
-           <div>
+           <div class="gridspace">
                 <asp:GridView runat="server" CssClass="table table-bordered table-striped table-hover"
                     ID="gdGames" AutoGenerateColumns="false" DataKeyNames="GID"
                     OnRowDeleting="gdGames_RowDeleting" AllowPaging="true" PageSize="3"
