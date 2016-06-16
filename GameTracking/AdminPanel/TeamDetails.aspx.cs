@@ -7,6 +7,13 @@ using System.Web.UI.WebControls;
 // using statements required for EF DB access
 using GameTracking.Models;
 using System.Web.ModelBinding;
+/*
+ * @File name : Team Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of Team
+ * 
+ */
 namespace GameTracking.AdminPanel
 {
     public partial class TeamDetails : System.Web.UI.Page
@@ -93,7 +100,16 @@ namespace GameTracking.AdminPanel
             }
             catch (Exception e) { }
         }
-
+        /**
+    * <summary>
+    * This event handler update or add record to DB
+    * </summary>
+    * 
+    * @method btnsubmit_Click
+    * @param {object} sender
+    * @param {EventArgs} e
+    * @returns {void}
+    */
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
             int rowCount;

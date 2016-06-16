@@ -10,7 +10,7 @@ using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 using System.Globalization;
 /*
-*  * @File name : Home page 
+* @File name : Home page 
 * @Author : Ritesh Patel and Parvati Patel
 * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
 * @File description : This is public home page.
@@ -69,7 +69,16 @@ namespace GameTracking
                 
             }
         }
-
+        /**
+      * <summary>
+      * This event handler Shows pop-up box with game name and description
+      * </summary>
+      * 
+      * @method lbGame_Click
+      * @param {object} sender
+      * @param {EventArgs} e
+      * @returns {void}
+      */
         protected void lbGame_Click(object sender, EventArgs e)
         {
             // find link button and createe object
@@ -88,7 +97,16 @@ namespace GameTracking
             }
                 
         }
-
+        /**
+      * <summary>
+      * This event handler deletes Shows pop-up box with team name and description
+      * </summary>
+      * 
+      * @method lbTeam1_Click
+      * @param {object} sender
+      * @param {EventArgs} e
+      * @returns {void}
+      */
         protected void lbTeam1_Click(object sender, EventArgs e)
         {
             // find link button and createe object
@@ -106,7 +124,16 @@ namespace GameTracking
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
             }
         }
-
+        /**
+      * <summary>
+      * This event handler Shows pop-up box with team name and description
+      * </summary>
+      * 
+      * @method lbTeam2_Click
+      * @param {object} sender
+      * @param {EventArgs} e
+      * @returns {void}
+      */
         protected void lbTeam2_Click(object sender, EventArgs e)
         {
             // find link button and createe object

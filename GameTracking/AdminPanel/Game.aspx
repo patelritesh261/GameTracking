@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="Game Page" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" EnableEventValidation="false" CodeBehind="Game.aspx.cs" Inherits="GameTracking.AdminPanel.Game" %>
-
+<%-- 
+ * @File name : Game Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of game
+ * 
+ *  
+--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -13,7 +20,7 @@
                          <asp:Label ID="lblMsg"  runat="server"  Text=""></asp:Label>
                     </div>
                 <div class="col-md-12">
-                     <a href="GameDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i>  Add Game</a>
+                     <a href="GameDetails.aspx" class="btn btn-sample btn-sm"><i class="fa fa-plus"></i> Game</a>
                    
               
 

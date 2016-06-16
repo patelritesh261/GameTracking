@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="Team Details" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="TeamDetails.aspx.cs" EnableEventValidation="false" Inherits="GameTracking.AdminPanel.TeamDetails" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<%-- 
+ * @File name : Team Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of Team
+ * 
+ *  
+--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
          <div class="container">
         <div class="row">

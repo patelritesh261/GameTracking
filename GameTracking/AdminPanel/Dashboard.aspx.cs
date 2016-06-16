@@ -9,6 +9,14 @@ using GameTracking.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 using System.Globalization;
+/*
+ * @File name : Dashboard Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides overview of Admin Panel
+ * 
+ * 
+ **/
 namespace GameTracking.AdminPanel
 {
     public partial class Dashboard : System.Web.UI.Page
@@ -21,7 +29,14 @@ namespace GameTracking.AdminPanel
                 GetData();
             }
         }
-
+        /**
+* <summary>
+* This method gets total number of records from each table.
+* </summary>
+* 
+* @method GetData
+* @returns {void}
+*/
         private void GetData()
         {
             using (DefaultConnection db = new DefaultConnection())

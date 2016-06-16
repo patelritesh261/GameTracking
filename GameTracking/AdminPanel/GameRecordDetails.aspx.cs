@@ -9,7 +9,13 @@ using GameTracking.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 using System.Globalization;
-
+/*
+ * @File name : Game Record Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of game records
+ * 
+ *  */
 namespace GameTracking.AdminPanel
 {
     public partial class GameRecordDetails : System.Web.UI.Page

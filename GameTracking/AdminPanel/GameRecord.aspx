@@ -1,5 +1,12 @@
 ﻿<%@ Page Title="Game Records" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="GameRecord.aspx.cs" Inherits="GameTracking.AdminPanel.GameRecord" %>
-
+<%-- 
+ * @File name : Game Records Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page shows all Game records and allows to pagging and sorting
+ * 
+ *  
+--%>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">

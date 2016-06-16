@@ -1,12 +1,18 @@
-﻿using System;
+﻿// using statements required for EF DB access
+using GameTracking.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.ModelBinding;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-// using statements required for EF DB access
-using GameTracking.Models;
-using System.Web.ModelBinding;
+ /*
+ * @File name : Game Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page shows all the games in table and allows to pagging and sorting
+ */
 namespace GameTracking.AdminPanel
 {
     public partial class GameDetails : System.Web.UI.Page
@@ -53,7 +59,16 @@ namespace GameTracking.AdminPanel
 
             }
         }
-
+        /**
+     * <summary>
+     * This event handler allows to add or update records to DB
+     * </summary>
+     * 
+     * @method btnsubmit_Click
+     * @param {object} sender
+     * @param {EventArgs} e
+     * @returns {void}
+     */
         protected void btnsubmit_Click(object sender, EventArgs e)
         {
             int rowCount;
@@ -124,14 +139,13 @@ namespace GameTracking.AdminPanel
                 
             }
         }
- /* <summary>
-* This method check if record already have in table.
-* </summary>
-* 
-* @method checkAlready
-* @returns {int
-    }
-*/
+        /* <summary>
+        * This method check if record already have in table.
+        * </summary>
+        * 
+        * @method checkAlready
+        * @returns {int }
+        */
         private int checkAlready(Games newGame)
         {
             int rowCount = 0;
@@ -157,7 +171,16 @@ namespace GameTracking.AdminPanel
             { }
             return rowCount;
         }
-
+        /**
+     * <summary>
+     * This event handler redirect to Games
+     * </summary>
+     * 
+     * @method btnCancel_Click
+     * @param {object} sender
+     * @param {EventArgs} e
+     * @returns {void}
+     */
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             // Redirect back to Games page

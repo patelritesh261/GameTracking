@@ -1,5 +1,12 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="GameTracking.AdminPanel.Admin" %>
-
+<%-- 
+ * @File name : Admin Master Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page works as master page for admin section
+ * 
+ *  
+--%>
 <%--- register user controls ---%>
 <%@ Register Src="~/User_Controls/NavbarAdmin.ascx" TagName="Navbar" TagPrefix="bs3" %>
 <%@ Register Src="~/User_Controls/Footer.ascx" TagName="Footer" TagPrefix="bs3" %>

@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="Game Records" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="GameRecordDetails.aspx.cs" Inherits="GameTracking.AdminPanel.GameRecordDetails" EnableEventValidation="false" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<%-- 
+ * @File name : Game Record Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of game records
+ * 
+ *  
+--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
        <div class="container">
         <div class="row">

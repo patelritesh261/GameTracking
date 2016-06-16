@@ -9,6 +9,15 @@ using System.Web.UI.WebControls;
 using GameTracking.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
+/*
+ * @File name : Game Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides add and update functionality of game
+ * 
+ * 
+ * 
+ **/
 namespace GameTracking.AdminPanel
 {
     public partial class Game : System.Web.UI.Page
@@ -131,7 +140,16 @@ namespace GameTracking.AdminPanel
             // refresh the grid
             this.GetGames();
         }
-
+        /**
+        * <summary>
+        * This event handler allows to sort according column clicked
+        * </summary>
+        * 
+        * @method gdGames_Sorting
+        * @param {object} sender
+        * @param {GridViewPageEventArgs} e
+        * @returns {void}
+        */
         protected void gdGames_Sorting(object sender, GridViewSortEventArgs e)
         {
             // get the column to sorty by
@@ -143,7 +161,16 @@ namespace GameTracking.AdminPanel
             // toggle the direction
             Session["SortDirection"] = Session["SortDirection"].ToString() == "ASC" ? "DESC" : "ASC";
         }
-
+        /**
+        * <summary>
+        * This event handler allows to bind font-awesome icon according to sorting 
+        * </summary>
+        * 
+        * @method gdGames_RowDataBound
+        * @param {object} sender
+        * @param {GridViewPageEventArgs} e
+        * @returns {void}
+        */
         protected void gdGames_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (IsPostBack)
@@ -171,6 +198,16 @@ namespace GameTracking.AdminPanel
                 }
             }
         }
+        /**
+        * <summary>
+        * This event handler allows change pageSize
+        * </summary>
+        * 
+        * @method PageSizeDropDownList_SelectedIndexChanged
+        * @param {object} sender
+        * @param {EventArgs} e
+        * @returns {void}
+        */
         protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Set the new Page size

@@ -9,6 +9,13 @@ using System.Web.UI.WebControls;
 using GameTracking.Models;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
+/*
+ * @File name : Team Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page shows all Teams and allows pagging and sorting
+ * 
+ */ 
 namespace GameTracking.AdminPanel
 {
     public partial class Team : System.Web.UI.Page
@@ -132,7 +139,16 @@ namespace GameTracking.AdminPanel
             // refresh the grid
             this.GetTeams();
         }
-
+        /**
+    * <summary>
+    * This event handler allows to bind font-awesome icon according to sortdirection
+    * </summary>
+    * 
+    * @method gdTeams_RowDataBound
+    * @param {object} sender
+    * @param {GridViewPageEventArgs} e
+    * @returns {void}
+    */
         protected void gdTeams_RowDataBound(object sender, GridViewRowEventArgs e)
         {
             if (IsPostBack)
@@ -160,7 +176,16 @@ namespace GameTracking.AdminPanel
                 }
             }
         }
-
+        /**
+    * <summary>
+    * This event handler allows to sort according to column clicked.
+    * </summary>
+    * 
+    * @method gdTeams_Sorting
+    * @param {object} sender
+    * @param {GridViewPageEventArgs} e
+    * @returns {void}
+    */
         protected void gdTeams_Sorting(object sender, GridViewSortEventArgs e)
         {
             // get the column to sorty by
@@ -172,6 +197,16 @@ namespace GameTracking.AdminPanel
             // toggle the direction
             Session["SortDirection"] = Session["SortDirection"].ToString() == "ASC" ? "DESC" : "ASC";
         }
+        /**
+    * <summary>
+    * This event handler allows to change page size
+    * </summary>
+    * 
+    * @method PageSizeDropDownList_SelectedIndexChanged
+    * @param {object} sender
+    * @param {EventArgs} e
+    * @returns {void}
+    */
         protected void PageSizeDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Set the new Page size
