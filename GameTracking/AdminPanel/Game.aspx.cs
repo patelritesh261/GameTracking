@@ -66,12 +66,12 @@ namespace GameTracking.AdminPanel
         protected void GetGames()
         {
             // connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
 
                 // query the Games Table using EF and LINQ
-                var Games = (from allGames in db.Games1
+                var Games = (from allGames in db.Games
                                 select allGames);
 
                 // bind the result to the GridView
@@ -99,15 +99,15 @@ namespace GameTracking.AdminPanel
             int GID = Convert.ToInt32(gdGames.DataKeys[selectedRow].Values["GID"]);
 
             // use EF to find the selected game in the DB and remove it
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 // create object of the Game class and store the query string inside of it
-                Games deletedGame = (from gameRecords in db.Games1
+                Models.Game deletedGame = (from gameRecords in db.Games
                                           where gameRecords.GID == GID
                                           select gameRecords).FirstOrDefault();
 
                 // remove the selected game from the db
-                db.Games1.Remove(deletedGame);
+                db.Games.Remove(deletedGame);
 
                 // save my changes back to the database
                 db.SaveChanges();

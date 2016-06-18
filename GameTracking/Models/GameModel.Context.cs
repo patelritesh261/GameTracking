@@ -13,10 +13,10 @@ namespace GameTracking.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class DefaultConnection : DbContext
+    public partial class DefaultConnectionGM : DbContext
     {
-        public DefaultConnection()
-            : base("name=DefaultConnection")
+        public DefaultConnectionGM()
+            : base("name=DefaultConnectionGM")
         {
         }
     
@@ -25,8 +25,8 @@ namespace GameTracking.Models
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<GameRecords> GameRecords1 { get; set; }
-        public virtual DbSet<Games> Games1 { get; set; }
-        public virtual DbSet<Teams> Teams1 { get; set; }
+        public virtual DbSet<GameRecord> GameRecords { get; set; }
+        public virtual DbSet<Game> Games { get; set; }
+        public virtual DbSet<Team> Teams { get; set; }
     }
 }

@@ -38,10 +38,10 @@ namespace GameTracking.AdminPanel
                 int GID = Convert.ToInt32(Request.QueryString["GID"]);
 
                 // connect to the EF DB
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
                     // populate a game object instance with the GID from the URL Parameter
-                    Games updatedStudent = (from game in db.Games1
+                    Models.Game updatedStudent = (from game in db.Games
                                             where game.GID == GID
                                             select game).FirstOrDefault();
 
@@ -73,11 +73,11 @@ namespace GameTracking.AdminPanel
         {
             int rowCount;
             // Use EF to connect to the server
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 // use the Games model to create a new game object and
                 // save a new record
-                Games newGame = new Games();
+                Models.Game newGame = new Models.Game();
 
                 int GID = 0;
 
@@ -87,7 +87,7 @@ namespace GameTracking.AdminPanel
                     GID = Convert.ToInt32(Request.QueryString["GID"]);
 
                     // get the current student from EF DB
-                    newGame = (from game in db.Games1
+                    newGame = (from game in db.Games
                                where game.GID == GID
                                select game).FirstOrDefault();
                    
@@ -108,7 +108,7 @@ namespace GameTracking.AdminPanel
                     rowCount = checkAlready(newGame);
                     if (rowCount == 0)
                     {
-                        db.Games1.Add(newGame);
+                        db.Games.Add(newGame);
 
                         Session["GameMsg"] = "Your Record Added Succeessfully.";
                         // save our changes - also updates and inserts
@@ -146,16 +146,16 @@ namespace GameTracking.AdminPanel
         * @method checkAlready
         * @returns {int }
         */
-        private int checkAlready(Games newGame)
+        private int checkAlready(Models.Game newGame)
         {
             int rowCount = 0;
             try
             {
 
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
                     //write query
-                    var recordAlready = (from record in db.Games1
+                    var recordAlready = (from record in db.Games
                                          where record.Name == newGame.Name
                                          select record).First();
                     if (recordAlready != null)

@@ -45,10 +45,10 @@ namespace GameTracking.AdminPanel
                 int TID = Convert.ToInt32(Request.QueryString["TeamID"].ToString());
 
                 //connect to EF DB
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
                     // populate a team object instance with the TID from the URL Parameter
-                    var Team = (from team in db.Teams1
+                    var Team = (from team in db.Teams
                                 where team.TID == TID
                                 select team).FirstOrDefault();
                     // map the team properties to the form controls
@@ -79,12 +79,12 @@ namespace GameTracking.AdminPanel
         {
             try
             {
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
                    
 
                     //Write query
-                    ddlGameName.DataSource = (from allGames in db.Games1
+                    ddlGameName.DataSource = (from allGames in db.Games
                                  orderby allGames.Name
                                  select new { allGames.GID,allGames.Name}).ToList();
 
@@ -114,11 +114,11 @@ namespace GameTracking.AdminPanel
         {
             int rowCount;
             // Use EF to connect to the server
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 // use the Teams model to create a new team object and
                 // save a new record
-                Teams newTeam = new Teams();
+                Models.Team newTeam = new Models.Team();
 
                 int TID = 0;
 
@@ -126,7 +126,7 @@ namespace GameTracking.AdminPanel
                 {
                         TID=Convert.ToInt32( Request.QueryString["TeamID"]);
                     //write query
-                     newTeam = (from teamRecord in db.Teams1
+                     newTeam = (from teamRecord in db.Teams
                                 where teamRecord.TID == TID
                                 select teamRecord).FirstOrDefault();
 
@@ -145,7 +145,7 @@ namespace GameTracking.AdminPanel
                     rowCount = checkAlready(newTeam);
                     if (rowCount == 0)
                     {
-                        db.Teams1.Add(newTeam);
+                        db.Teams.Add(newTeam);
 
                         Session["TeamMsg"] = "Your Record Added Succeessfully.";
                         //save our change
@@ -177,16 +177,16 @@ namespace GameTracking.AdminPanel
 * @returns {int
     }
 */
-        private int checkAlready(Teams newGame)
+        private int checkAlready(Models.Team newGame)
         {
             int rowCount = 0;
             try
             {
 
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
                     //write query
-                    var recordAlready = (from record in db.Teams1
+                    var recordAlready = (from record in db.Teams
                                          where record.Name == newGame.Name
                                          select record).First();
                     if (recordAlready != null)

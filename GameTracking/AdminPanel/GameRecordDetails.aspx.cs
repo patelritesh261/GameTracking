@@ -49,9 +49,9 @@ namespace GameTracking.AdminPanel
                 int GRID = Convert.ToInt32(Request.QueryString["GRID"]);
                 if (GRID > 0) {
                     //connect to EF DB
-                    using (DefaultConnection db = new DefaultConnection())
+                    using (DefaultConnectionGM db = new DefaultConnectionGM())
                     {
-                        var gameRecords = (from records in db.GameRecords1
+                        var gameRecords = (from records in db.GameRecords
                                            where records.GRID == GRID
                                            select records).FirstOrDefault();
 
@@ -98,12 +98,12 @@ namespace GameTracking.AdminPanel
         {
             try
             {
-                using (DefaultConnection db = new DefaultConnection())
+                using (DefaultConnectionGM db = new DefaultConnectionGM())
                 {
 
 
                     //Write query
-                    ddlGameName.DataSource = (from allGames in db.Games1
+                    ddlGameName.DataSource = (from allGames in db.Games
                                               orderby allGames.Name
                                               select new { allGames.GID, allGames.Name }).ToList();
 
@@ -149,10 +149,10 @@ namespace GameTracking.AdminPanel
         {
             try {
                 //connect to database
-                using (DefaultConnection db = new DefaultConnection()) {
+                using (DefaultConnectionGM db = new DefaultConnectionGM()) {
 
                     //write query
-                    var TeamRecords = (from records in db.Teams1
+                    var TeamRecords = (from records in db.Teams
                                        where records.Gid == GID
                                        select new { records.Name, records.TID }).ToList();
 
@@ -228,19 +228,19 @@ namespace GameTracking.AdminPanel
         {
             int rowCount;
             //connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 if (Convert.ToInt32(txtWinTeamScore.Text)>Convert.ToInt32(txtLoseTeamScore.Text )) {
                     if ((ddlTeamName1.SelectedValue != ddlTeamName2.SelectedValue))
                     {
                         int GRID = 0;
                         //define onject of Game record model
-                        GameRecords newGameRecord = new GameRecords();
+                        Models.GameRecord newGameRecord = new Models.GameRecord();
 
                         if (Request.QueryString.Count > 0)
                         {
                             GRID = Convert.ToInt32(Request.QueryString["GRID"]);
-                            newGameRecord = (from record in db.GameRecords1
+                            newGameRecord = (from record in db.GameRecords
                                              where record.GRID == GRID
                                              select record).FirstOrDefault();
                           
@@ -269,7 +269,7 @@ namespace GameTracking.AdminPanel
                             rowCount = checkAlready(newGameRecord);
                             if (rowCount == 0)
                             {
-                                db.GameRecords1.Add(newGameRecord);
+                                db.GameRecords.Add(newGameRecord);
                                 Session["GRMsg"] = "Your Record Added Succeessfully.";
                                 //save our change
                                 db.SaveChanges();
@@ -320,15 +320,15 @@ namespace GameTracking.AdminPanel
 * @method checkAlready
 * @returns {int}
 */
-        private int checkAlready(GameRecords newGameRecord)
+        private int checkAlready(Models.GameRecord newGameRecord)
         {
             int rowCount = 0;
             try {
                
-                using (DefaultConnection db =new DefaultConnection())
+                using (DefaultConnectionGM db =new DefaultConnectionGM())
                 {
                     //write query
-                    var recordAlready=(from record in db.GameRecords1
+                    var recordAlready=(from record in db.GameRecords
                                       where record.Date==newGameRecord.Date
                                       && record.Gid==newGameRecord.Gid
                                       && record.Team1==newGameRecord.Team1

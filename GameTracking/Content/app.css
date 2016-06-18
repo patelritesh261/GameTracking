@@ -160,6 +160,14 @@ box-shadow: 2px 2px 15px #888888;
         text-align:center;
     background:#3D566E;
     color:#fff;
+    
+}
+.card-head{
+     font: bold 22px/45px 'Open Sans', Sans-Serif;
+        text-align:center;
+    background:#1ABC9C;
+    color:#fff;
+    padding-bottom:3px;
 }
 .card-text,.card-title {
     padding-left:5%;

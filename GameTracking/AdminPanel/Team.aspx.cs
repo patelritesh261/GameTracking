@@ -64,13 +64,13 @@ namespace GameTracking.AdminPanel
         private void GetTeams()
         {
             // connect to EF
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 string SortString = Session["SortColumn"].ToString() + " " + Session["SortDirection"].ToString();
 
                 // query the Teams Table using EF and LINQ
-                var Teams = (from allTeams in db.Teams1
-                             join allGames in db.Games1
+                var Teams = (from allTeams in db.Teams
+                             join allGames in db.Games
                              on allTeams.Gid equals allGames.GID
                              select new { allTeams.Name,allTeams.Description,GName=allGames.Name,allTeams.TID,allTeams.Gid,allGames.GID});
 
@@ -99,15 +99,15 @@ namespace GameTracking.AdminPanel
             int TID = Convert.ToInt32(gdTeams.DataKeys[selectRow].Values["TID"]);
 
             // use EF to find the selected team in the DB and remove it
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 // create object of the team class and store the query string inside of it
-                Teams deletedTeam = (from teamRecords in db.Teams1
+                Models.Team deletedTeam = (from teamRecords in db.Teams
                                      where teamRecords.TID == TID
                                      select teamRecords).FirstOrDefault();
 
                 // remove the selected game from the db
-                db.Teams1.Remove(deletedTeam);
+                db.Teams.Remove(deletedTeam);
 
                 // save my changes back to the database
                 db.SaveChanges();

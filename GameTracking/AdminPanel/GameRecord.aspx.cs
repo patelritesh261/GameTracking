@@ -57,12 +57,12 @@ namespace GameTracking.AdminPanel
                 //geberate sorting 
                 string SortString = Session["SortColumn"] + " " + Session["SortDirection"];
                 //Connect to EF DB
-                using (DefaultConnection db = new DefaultConnection()) {
-                    var GameRecords = (from GR in db.GameRecords1
-                                       join G in db.Games1 on GR.Gid equals G.GID
-                                       join T in db.Teams1 on GR.Team1 equals T.TID
-                                       join T1 in db.Teams1 on GR.Team2 equals T1.TID
-                                       join W in db.Teams1 on GR.WTeam equals W.TID
+                using (DefaultConnectionGM db = new DefaultConnectionGM()) {
+                    var GameRecords = (from GR in db.GameRecords
+                                       join G in db.Games on GR.Gid equals G.GID
+                                       join T in db.Teams on GR.Team1 equals T.TID
+                                       join T1 in db.Teams on GR.Team2 equals T1.TID
+                                       join W in db.Teams on GR.WTeam equals W.TID
                                        select new  { GR.GRID,GR.Sepectators,GR.T1WinScore,GR.T2WinScore,GR.Date,GR.Team2,GR.Team1,GR.WTeam,GName=G.Name,TeamN1=T.Name,TeamN2=T1.Name,WTeamN=W.Name} );
 
                     //bind result to grid view
@@ -91,13 +91,13 @@ namespace GameTracking.AdminPanel
             int GRID = Convert.ToInt32(gdGameRecord.DataKeys[selectRow].Values["GRID"]);
 
             //Connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
-                var deleteRecord = (from record in db.GameRecords1
+                var deleteRecord = (from record in db.GameRecords
                                     where record.GRID == GRID
                                     select record).FirstOrDefault();
 
-                db.GameRecords1.Remove(deleteRecord);
+                db.GameRecords.Remove(deleteRecord);
 
                 db.SaveChanges();
                 //refresh grid

@@ -12,22 +12,24 @@ namespace GameTracking.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Games
+    public partial class Team
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Games()
+        public Team()
         {
-            this.GameRecords = new HashSet<GameRecords>();
-            this.Teams = new HashSet<Teams>();
+            this.GameRecords = new HashSet<GameRecord>();
+            this.GameRecords1 = new HashSet<GameRecord>();
         }
     
-        public int GID { get; set; }
+        public int TID { get; set; }
         public string Name { get; set; }
+        public int Gid { get; set; }
         public string Description { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<GameRecords> GameRecords { get; set; }
+        public virtual ICollection<GameRecord> GameRecords { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Teams> Teams { get; set; }
+        public virtual ICollection<GameRecord> GameRecords1 { get; set; }
+        public virtual Game Game { get; set; }
     }
 }

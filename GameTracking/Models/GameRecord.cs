@@ -12,7 +12,7 @@ namespace GameTracking.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class GameRecords
+    public partial class GameRecord
     {
         public int GRID { get; set; }
         public int Gid { get; set; }
@@ -28,8 +28,8 @@ namespace GameTracking.Models
         public System.DateTime Date { get; set; }
         public int Week { get; set; }
     
-        public virtual Games Game { get; set; }
-        public virtual Teams Team { get; set; }
-        public virtual Teams Team3 { get; set; }
+        public virtual Game Game { get; set; }
+        public virtual Team Team { get; set; }
+        public virtual Team Team3 { get; set; }
     }
 }

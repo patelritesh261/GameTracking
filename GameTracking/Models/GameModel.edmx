@@ -114,7 +114,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="GameModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="GameRecords">
+        <EntityType Name="GameRecord">
           <Key>
             <PropertyRef Name="GRID" />
           </Key>
@@ -135,7 +135,7 @@
           <NavigationProperty Name="Team" Relationship="Self.FK_GameRecords_ToTeams1" FromRole="GameRecords" ToRole="Teams" />
           <NavigationProperty Name="Team3" Relationship="Self.FK_GameRecords_ToTeams2" FromRole="GameRecords" ToRole="Teams" />
         </EntityType>
-        <EntityType Name="Games">
+        <EntityType Name="Game">
           <Key>
             <PropertyRef Name="GID" />
           </Key>
@@ -145,7 +145,7 @@
           <NavigationProperty Name="GameRecords" Relationship="Self.FK_GameRecords_ToGames" FromRole="Games" ToRole="GameRecords" />
           <NavigationProperty Name="Teams" Relationship="Self.FK_Teams_ToGames" FromRole="Games" ToRole="Teams" />
         </EntityType>
-        <EntityType Name="Teams">
+        <EntityType Name="Team">
           <Key>
             <PropertyRef Name="TID" />
           </Key>
@@ -158,8 +158,8 @@
           <NavigationProperty Name="Game" Relationship="Self.FK_Teams_ToGames" FromRole="Teams" ToRole="Games" />
         </EntityType>
         <Association Name="FK_GameRecords_ToGames">
-          <End Role="Games" Type="GameModel.Games" Multiplicity="1" />
-          <End Role="GameRecords" Type="GameModel.GameRecords" Multiplicity="*" />
+          <End Role="Games" Type="Self.Game" Multiplicity="1" />
+          <End Role="GameRecords" Type="Self.GameRecord" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Games">
               <PropertyRef Name="GID" />
@@ -170,8 +170,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GameRecords_ToTeams1">
-          <End Role="Teams" Type="GameModel.Teams" Multiplicity="1" />
-          <End Role="GameRecords" Type="GameModel.GameRecords" Multiplicity="*" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
+          <End Role="GameRecords" Type="Self.GameRecord" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
               <PropertyRef Name="TID" />
@@ -182,8 +182,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_GameRecords_ToTeams2">
-          <End Role="Teams" Type="GameModel.Teams" Multiplicity="1" />
-          <End Role="GameRecords" Type="GameModel.GameRecords" Multiplicity="*" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="1" />
+          <End Role="GameRecords" Type="Self.GameRecord" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Teams">
               <PropertyRef Name="TID" />
@@ -194,8 +194,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Teams_ToGames">
-          <End Role="Games" Type="GameModel.Games" Multiplicity="1" />
-          <End Role="Teams" Type="GameModel.Teams" Multiplicity="*" />
+          <End Role="Games" Type="Self.Game" Multiplicity="1" />
+          <End Role="Teams" Type="Self.Team" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Games">
               <PropertyRef Name="GID" />
@@ -205,25 +205,25 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="DefaultConnection" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="GameRecords1" EntityType="GameModel.GameRecords" />
-          <EntitySet Name="Games1" EntityType="GameModel.Games" />
-          <EntitySet Name="Teams1" EntityType="GameModel.Teams" />
+        <EntityContainer Name="DefaultConnectionGM" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="GameRecords" EntityType="Self.GameRecord" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Teams" EntityType="Self.Team" />
           <AssociationSet Name="FK_GameRecords_ToGames" Association="Self.FK_GameRecords_ToGames">
-            <End Role="Games" EntitySet="Games1" />
-            <End Role="GameRecords" EntitySet="GameRecords1" />
+            <End Role="Games" EntitySet="Games" />
+            <End Role="GameRecords" EntitySet="GameRecords" />
           </AssociationSet>
           <AssociationSet Name="FK_GameRecords_ToTeams1" Association="Self.FK_GameRecords_ToTeams1">
-            <End Role="Teams" EntitySet="Teams1" />
-            <End Role="GameRecords" EntitySet="GameRecords1" />
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="GameRecords" EntitySet="GameRecords" />
           </AssociationSet>
           <AssociationSet Name="FK_GameRecords_ToTeams2" Association="Self.FK_GameRecords_ToTeams2">
-            <End Role="Teams" EntitySet="Teams1" />
-            <End Role="GameRecords" EntitySet="GameRecords1" />
+            <End Role="Teams" EntitySet="Teams" />
+            <End Role="GameRecords" EntitySet="GameRecords" />
           </AssociationSet>
           <AssociationSet Name="FK_Teams_ToGames" Association="Self.FK_Teams_ToGames">
-            <End Role="Games" EntitySet="Games1" />
-            <End Role="Teams" EntitySet="Teams1" />
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Teams" EntitySet="Teams" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -231,9 +231,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="GameModelStoreContainer" CdmEntityContainer="DefaultConnection">
-          <EntitySetMapping Name="GameRecords1">
-            <EntityTypeMapping TypeName="GameModel.GameRecords">
+        <EntityContainerMapping StorageEntityContainer="GameModelStoreContainer" CdmEntityContainer="DefaultConnectionGM">
+          <EntitySetMapping Name="GameRecords">
+            <EntityTypeMapping TypeName="GameModel.GameRecord">
               <MappingFragment StoreEntitySet="GameRecords">
                 <ScalarProperty Name="GRID" ColumnName="GRID" />
                 <ScalarProperty Name="Gid" ColumnName="Gid" />
@@ -251,8 +251,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Games1">
-            <EntityTypeMapping TypeName="GameModel.Games">
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="GameModel.Game">
               <MappingFragment StoreEntitySet="Games">
                 <ScalarProperty Name="GID" ColumnName="GID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
@@ -260,8 +260,8 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Teams1">
-            <EntityTypeMapping TypeName="GameModel.Teams">
+          <EntitySetMapping Name="Teams">
+            <EntityTypeMapping TypeName="GameModel.Team">
               <MappingFragment StoreEntitySet="Teams">
                 <ScalarProperty Name="TID" ColumnName="TID" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

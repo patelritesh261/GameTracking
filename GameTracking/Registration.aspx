@@ -1,62 +1,56 @@
 ﻿<%@ Page Title="Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="GameTracking.AdminPanel.Registration" %>
 <%-- 
- * @File name : Registration page 
- * @Author : Ritesh Patel and Parvati Patel
- * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
- * @File description : This is registration page.   
-    --%>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+   * @File name : Registration page 
+   * @Author : Ritesh Patel and Parvati Patel
+   * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+   * @File description : This is registration page.   
+   --%>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server"></asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-       <div class="container">
-        <div class="row">
-            <div class="col-md-offset-3 col-md-6">
-                <h1>Registration</h1>
-
-                <hr style="width: 100%; color: black; height: 3px; background-color: black;" />
-      <!-- start contact form -->
-                <form role="form" method="post" action="Contact.aspx">
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">User Name</label>
-                        </div>
-                        <div class="col-md-offset-4 ">
-                            <asp:TextBox ID="txtUserName" runat="server" required="true" CssClass="form-control" placeholder="User Name"  CausesValidation="True"></asp:TextBox>
-                        </div>
-
-                    </div>
-                         <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Email</label>
-                        </div>
-                        <div class="col-md-offset-4 ">
-                            <asp:TextBox ID="txtEmail" runat="server" required="true" CssClass="form-control" placeholder="Email"  CausesValidation="True"></asp:TextBox>
-                        </div>
-
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Password</label>
-                        </div>
-                        <div class="col-md-offset-4 ">
-                            <asp:TextBox TextMode="Password" CssClass="form-control" ID="txtPassword" placeholder="Password" required="true" runat="server"></asp:TextBox>
-                        </div>
-                    </div>
-                   
-                       <div class="form-group">
-                        <div class="col-md-4">
-                            <label class="control-label" for="exampleInputEmail">Confirm Password</label>
-                        </div>
-                        <div class="col-md-offset-4 ">
-                            <asp:TextBox TextMode="Password" CssClass="form-control" ID="txtConfirmPassword" placeholder="Confirm Password" required="true" runat="server"></asp:TextBox>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <asp:Button ID="btnsubmit" CssClass="btn btn-sample" runat="server" Text="Login" />
-                         <asp:Button ID="Button1" CssClass="btn btn-sample-inverse" runat="server" Text="Register" />
-                    </div>
-                </form>
-                 <!-- end contact form -->
-                </div>
-            </div></div>
+   <div class="container">
+      <div class="row">
+         <div class="col-md-offset-4 col-md-4">
+            <div class="alert alert-danger" id="AlertFlash" runat="server" visible="false">
+               <asp:Label runat="server" ID="StatusLabel" />
+            </div>
+           <br />
+             <br />
+            <br />
+            <div class="card text-xs-center">
+               <div class="card-header">
+                    <asp:label ID="lbGame" runat="server"  Text="<i class='fa fa-user-plus fa-lg'></i>Register" ></asp:label>
+                 
+               </div>
+               <div class="panel-body">
+                  <div class="form-group">
+                     <label class="control-label" for="UserNameTextBox">Username:</label>
+                     <asp:TextBox runat="server" CssClass="form-control" ID="UserNameTextBox" placeholder="Username" required="true" TabIndex="0"></asp:TextBox>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label" for="PhoneNumberTextBox">Phone Number:</label>
+                     <asp:TextBox runat="server" TextMode="Phone" CssClass="form-control" ID="PhoneNumberTextBox" placeholder="Phone Number" required="true" TabIndex="0"></asp:TextBox>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label" for="EmailTextBox">Email:</label>
+                     <asp:TextBox runat="server" TextMode="Email" CssClass="form-control" ID="EmailTextBox" placeholder="Email" required="true" TabIndex="0"></asp:TextBox>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label" for="PasswordTextBox">Password:</label>
+                     <asp:TextBox runat="server" TextMode="Password" CssClass="form-control" ID="PasswordTextBox" placeholder="Password" required="true" TabIndex="0"></asp:TextBox>
+                  </div>
+                  <div class="form-group">
+                     <label class="control-label" for="ConfirmPasswordTextBox">Confirm:</label>
+                     <asp:TextBox runat="server" TextMode="Password" CssClass="form-control" ID="ConfirmPasswordTextBox" placeholder="Confirm Password" required="true" TabIndex="0"></asp:TextBox>
+                     <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal" ControlToValidate="ConfirmPasswordTextBox" runat="server"
+                        ControlToCompare="PasswordTextBox" CssClass="label label-danger" />
+                  </div>
+                  <div class="text-right">
+                     <asp:Button Text="Cancel" ID="CancelButton" runat="server" CssClass="btn btn-sample-inverse" OnClick="CancelButton_Click" UseSubmitBehavior="false" CausesValidation="false" TabIndex="0" />
+                     <asp:Button Text="Register" ID="RegisterButton" runat="server" CssClass="btn btn-sample" OnClick="RegisterButton_Click" TabIndex="0" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
 </asp:Content>

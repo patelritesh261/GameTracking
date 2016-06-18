@@ -39,18 +39,18 @@ namespace GameTracking.AdminPanel
 */
         private void GetData()
         {
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 //games count
-                var countGame = (from count in db.Games1
+                var countGame = (from count in db.Games
                                  select count).Count();
 
                 //teams count
-                var countTeam = (from count in db.Teams1
+                var countTeam = (from count in db.Teams
                                  select count).Count();
 
                 //games records
-                var countGRecords = (from count in db.GameRecords1
+                var countGRecords = (from count in db.GameRecords
                                      select count).Count();
 
                 //bind data

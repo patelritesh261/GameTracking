@@ -25,6 +25,7 @@ namespace GameTracking
         {
             if (!IsPostBack)
             {
+                
                 //bind data to form
                 bindGames();
             }
@@ -40,7 +41,7 @@ namespace GameTracking
         private void bindGames()
         {
             //Connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
                 //get current week
                 CultureInfo ciCurr = CultureInfo.CurrentCulture;
@@ -48,11 +49,11 @@ namespace GameTracking
 
 
                 //write query
-                var GameRecords = (from GR in db.GameRecords1
-                                   join G in db.Games1 on GR.Gid equals G.GID
-                                   join T in db.Teams1 on GR.Team1 equals T.TID
-                                   join T1 in db.Teams1 on GR.Team2 equals T1.TID
-                                   join W in db.Teams1 on GR.WTeam equals W.TID
+                var GameRecords = (from GR in db.GameRecords
+                                   join G in db.Games on GR.Gid equals G.GID
+                                   join T in db.Teams on GR.Team1 equals T.TID
+                                   join T1 in db.Teams on GR.Team2 equals T1.TID
+                                   join W in db.Teams on GR.WTeam equals W.TID
                                    where GR.Week==Week
                                    select new { GR.GRID, GR.Sepectators, GR.T1WinScore, GR.T2WinScore, GR.Date, GR.Team2, GR.Team1, GR.WTeam, GName = G.Name, TeamN1 = T.Name, TeamN2 = T1.Name, WTeamN = W.Name, TotalScore=GR.T1WinScore+GR.T2WinScore,GR.Week });
 
@@ -84,9 +85,9 @@ namespace GameTracking
             // find link button and createe object
             LinkButton lnkBtnTags = (LinkButton)sender;
             //Connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
-                var recordGame = (from record in db.Games1
+                var recordGame = (from record in db.Games
                                   where record.Name == lnkBtnTags.Text.Trim()
                                   select record).FirstOrDefault();
 
@@ -112,9 +113,9 @@ namespace GameTracking
             // find link button and createe object
             LinkButton lnkBtnTags = (LinkButton)sender;
             //Connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
-                var recordGame = (from record in db.Teams1
+                var recordGame = (from record in db.Teams
                                   where record.Name == lnkBtnTags.Text.Trim()
                                   select record).FirstOrDefault();
 
@@ -139,9 +140,10 @@ namespace GameTracking
             // find link button and createe object
             LinkButton lnkBtnTags = (LinkButton)sender;
             //Connect to EF DB
-            using (DefaultConnection db = new DefaultConnection())
+            
+            using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
-                var recordGame = (from record in db.Teams1
+                var recordGame = (from record in db.Teams
                                   where record.Name == lnkBtnTags.Text.Trim()
                                   select record).FirstOrDefault();
 
