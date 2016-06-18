@@ -1,4 +1,4 @@
-﻿
+﻿using SendGrid;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using SendGrid;
+
 /*
 * @File name : Contact Page
 * @Author : Ritesh Patel and Parvati Patel
@@ -58,10 +58,11 @@ namespace GameTracking
             // Create the email object first, then add the properties.
             try
             {
+               
                 SendGridMessage myMessage = new SendGridMessage();
                 myMessage.AddTo(txtEmail.Text.ToString());
                 myMessage.From = new MailAddress("testwebritz@gmail.com", "Ritesh Patel");
-                myMessage.Subject = "Contact from portfolio";
+                myMessage.Subject = "Contact from Game Tracking";
                 myMessage.Text = " Hi " + txtfirstname.Text.ToString().Trim() + "\n\n Thank you for reviewing my portfolio\n\n Thank you. ";
 
                 // Create a Web transport, using API Key
