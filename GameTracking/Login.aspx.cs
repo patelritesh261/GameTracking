@@ -43,7 +43,8 @@ namespace GameTracking.AdminPanel
 
                 // Sign the user
                 authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-
+                //store username in session
+                Session["UserName"] = UserNameTextBox.Text.Trim();
                 // Redirect to Main Menu
                 Response.Redirect("~/AdminPanel/Dashboard.aspx");
             }

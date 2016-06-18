@@ -10,12 +10,13 @@
    <div class="container">
       <div class="row">
          <div class="col-md-offset-4 col-md-4">
-            <div class="alert alert-danger" id="AlertFlash" runat="server" visible="false">
-               <asp:Label runat="server" ID="StatusLabel" />
-            </div>
+            
            <br />
              <br />
             <br />
+             <div class="alert btn-sample btn-sm alert-dismissible" id="AlertFlash" runat="server" visible="false">
+               <asp:Label runat="server" ID="StatusLabel" />
+            </div>
             <div class="card text-xs-center">
                <div class="card-header">
                     <asp:label ID="lbGame" runat="server"  Text="<i class='fa fa-user-plus fa-lg'></i>Register" ></asp:label>
