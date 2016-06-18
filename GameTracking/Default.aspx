@@ -15,13 +15,13 @@
             <div class="col-md-offset-1 col-md-11">
                   <div class="col-md-12">
                       <div class="col-md-1">
-                         <h1><i class="fa fa-hand-o-left" aria-hidden="true"></i></h1> 
+                         <h1><asp:LinkButton ID="lbprevious" runat="server" OnClick="lbprevious_Click" ><i class="fa fa-hand-o-left" aria-hidden="true"></i></asp:LinkButton> </h1> 
                       </div>
                       <div class="col-md-9">
                           <h1><center> Weekly Statistic</center></h1>
                       </div>
                       <div class="col-md-1">
-                         <h1> <i class="fa fa-hand-o-right" aria-hidden="true"></i></h1>
+                         <h1><asp:LinkButton ID="lbnext" runat="server" OnClick="lbnext_Click"  > <i class="fa fa-hand-o-right" aria-hidden="true"></i></asp:LinkButton></h1>
                       </div>
                   </div> 
                <div class="col-md-12">

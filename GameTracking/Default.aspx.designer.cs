@@ -13,6 +13,24 @@ namespace GameTracking {
     public partial class Default {
         
         /// <summary>
+        /// lbprevious control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbprevious;
+        
+        /// <summary>
+        /// lbnext control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbnext;
+        
+        /// <summary>
         /// rptGame control.
         /// </summary>
         /// <remarks>

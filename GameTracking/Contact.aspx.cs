@@ -63,7 +63,7 @@ namespace GameTracking
                 myMessage.AddTo(txtEmail.Text.ToString());
                 myMessage.From = new MailAddress("testwebritz@gmail.com", "Ritesh Patel");
                 myMessage.Subject = "Contact from Game Tracking";
-                myMessage.Text = " Hi " + txtfirstname.Text.ToString().Trim() + "\n\n Thank you for reviewing my portfolio\n\n Thank you. ";
+                myMessage.Text = " Hi " + txtfirstname.Text.ToString().Trim() + "\n\n Thank you for visiting my Game Tracking\n\n Thank you. ";
 
                 // Create a Web transport, using API Key
                 var transportWeb = new Web("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");

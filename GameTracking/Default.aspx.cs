@@ -17,12 +17,16 @@ using System.Globalization;
 * 
 * 
 */
+
 namespace GameTracking
 {
     public partial class Default : System.Web.UI.Page
     {
+        private int Week = 0;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+
             if (!IsPostBack)
             {
                 
@@ -43,10 +47,13 @@ namespace GameTracking
             //Connect to EF DB
             using (DefaultConnectionGM db = new DefaultConnectionGM())
             {
+                if (Week == 0) { 
                 //get current week
                 CultureInfo ciCurr = CultureInfo.CurrentCulture;
-                int Week = Convert.ToInt32(ciCurr.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday).ToString());
-
+                Week = Convert.ToInt32(ciCurr.Calendar.GetWeekOfYear(DateTime.Now, CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Monday).ToString());
+            }
+                lbprevious.CommandArgument = (Week - 1).ToString();
+                lbnext.CommandArgument = (Week + 1).ToString();
 
                 //write query
                 var GameRecords = (from GR in db.GameRecords
@@ -63,9 +70,13 @@ namespace GameTracking
                     rptGame.DataSource = GameRecords.ToList();
                     rptGame.DataBind();
                     Jumbotron3.Visible = false;
+                    rptGame.Visible = true;
                 }
                 else {
+                    rptGame.DataSource = null;
+                    rptGame.DataBind();
                     Jumbotron3.Visible = true;
+                    rptGame.Visible = true;
                 }
                 
             }
@@ -152,6 +163,20 @@ namespace GameTracking
                 lblbody.Text = recordGame.Description;
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", "openModal();", true);
             }
+        }
+
+        protected void lbprevious_Click(object sender, EventArgs e)
+        {
+            Week = Convert.ToInt32(lbprevious.CommandArgument.ToString());
+            //bind new data
+            bindGames();
+        }
+
+        protected void lbnext_Click(object sender, EventArgs e)
+        {
+            Week = Convert.ToInt32(lbnext.CommandArgument.ToString());
+            //bind new data
+            bindGames();
         }
     }
 }
