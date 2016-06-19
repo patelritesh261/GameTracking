@@ -29,6 +29,7 @@
                  <li id="teams" runat="server"><a href="../AdminPanel/Team.aspx"><i class="fa fa-users fa-lg" aria-hidden="true"></i> Teams</a></li>
                 <li id="gamerecord" runat="server"><a href="../AdminPanel/GameRecord.aspx"><i class="fa fa-trophy fa-lg" aria-hidden="true"></i> Game Records</a></li>
                 <li id="profile" runat="server"><a href="../AdminPanel/Profile.aspx"><i class="fa fa-user  fa-lg"></i>Welcome, <%=Session["UserName"] %></a></li>
+                <li id="users" runat="server"><a href="../Admin/Users.aspx"><i class="fa fa-users  fa-lg"></i>Users</a></li>
                 <li id="login" runat="server"><a href="../Logout.aspx"><i class="fa fa-sign-out  fa-lg"></i> Logout</a></li>
                 
             </ul>

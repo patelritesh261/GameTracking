@@ -40,6 +40,8 @@ namespace GameTracking
                     txtfirstname.Text = "";
                     txtEmail.Text = "";
                     txtMessage.Text = "";
+                    StatusLabel.Text = "Thank you contact Us we will reply ASAP.";
+                    AlertFlash.Visible = true;
                 }
             }
             catch (Exception)

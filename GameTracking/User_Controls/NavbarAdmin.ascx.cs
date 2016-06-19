@@ -18,6 +18,10 @@ namespace GameTracking.User_Controls
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["UserName"].ToString() == "admin")
+                users.Visible = true;
+            else
+                users.Visible = false;
             SetActivePage();
         }
         /**
@@ -46,6 +50,9 @@ namespace GameTracking.User_Controls
                     break;
                 case "Profile":
                     profile.Attributes.Add("class", "liactive");
+                    break;
+                case "Users":
+                    users.Attributes.Add("class", "liactive");
                     break;
             }
         }
