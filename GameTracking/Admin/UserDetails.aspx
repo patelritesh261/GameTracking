@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="User Details Page" Language="C#" MasterPageFile="~/AdminPanel/Admin.Master" AutoEventWireup="true" CodeBehind="UserDetails.aspx.cs" Inherits="GameTracking.Admin.UserDetails" %>
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
+<%-- 
+ * @File name : User Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides access to admin to update and add new user.
+ * 
+ *  
+--%>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
      <div class="container">
 

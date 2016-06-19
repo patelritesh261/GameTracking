@@ -12,6 +12,16 @@ using System.Web.ModelBinding;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Owin.Security;
+/*
+ * 
+ * @File name : User Details Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides access to admin to update and add new user.
+ * 
+ * 
+ * 
+ */
 namespace GameTracking.Admin
 {
     public partial class UserDetails : System.Web.UI.Page

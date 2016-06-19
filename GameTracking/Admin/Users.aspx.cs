@@ -8,6 +8,16 @@ using System.Web.UI.WebControls;
 // required for EF DB Access
 using GameTracking.Models;
 using System.Web.ModelBinding;
+/*
+ * 
+ * @File name : Users Page
+ * @Author : Ritesh Patel and Parvati Patel
+ * @Website name : GameTracking(http://gametracking.azurewebsites.net/)
+ * @File description : This page provides access to admin to delete and  show all users.
+ * 
+ * 
+ * 
+ */
 namespace GameTracking.Admin
 {
     public partial class Users : System.Web.UI.Page
