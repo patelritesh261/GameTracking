@@ -37,16 +37,23 @@ namespace GameTracking.AdminPanel
             // if a match is found for the user
             if (user != null)
             {
-                // authenticate and login our new user
-                var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-                var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
+                if (user.EmailConfirmed == true)
+                {
+                    // authenticate and login our new user
+                    var authenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                    var userIdentity = userManager.CreateIdentity(user, DefaultAuthenticationTypes.ApplicationCookie);
 
-                // Sign the user
-                authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
-                //store username in session
-                Session["UserName"] = UserNameTextBox.Text.Trim();
-                // Redirect to Main Menu
-                Response.Redirect("~/AdminPanel/Dashboard.aspx");
+                    // Sign the user
+                    authenticationManager.SignIn(new AuthenticationProperties() { IsPersistent = false }, userIdentity);
+                    //store username in session
+                    Session["UserName"] = UserNameTextBox.Text.Trim();
+                    // Redirect to Main Menu
+                    Response.Redirect("~/AdminPanel/Dashboard.aspx");
+                }
+                else {
+                    StatusLabel.Text = "Please check your mail and confirm your account.";
+                    AlertFlash.Visible = true;
+                }
             }
             else
             {

@@ -76,6 +76,15 @@ namespace GameTracking.AdminPanel {
         protected global::System.Web.UI.WebControls.TextBox PasswordTextBox;
         
         /// <summary>
+        /// Regex2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator Regex2;
+        
+        /// <summary>
         /// ConfirmPasswordTextBox control.
         /// </summary>
         /// <remarks>

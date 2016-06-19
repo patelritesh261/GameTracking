@@ -38,6 +38,10 @@
                   <div class="form-group">
                      <label class="control-label" for="PasswordTextBox">Password:</label>
                      <asp:TextBox runat="server" TextMode="Password" CssClass="form-control" ID="PasswordTextBox" placeholder="Password" required="true" TabIndex="0"></asp:TextBox>
+                    <asp:RegularExpressionValidator ID="Regex2" runat="server" ControlToValidate="PasswordTextBox"
+        ValidationExpression="^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$"
+        ErrorMessage="Minimum 8 characters atleast 1 Alphabet, 1 Number and 1 Special Character"
+        CssClass="label label-danger" />
                   </div>
                   <div class="form-group">
                      <label class="control-label" for="ConfirmPasswordTextBox">Confirm:</label>

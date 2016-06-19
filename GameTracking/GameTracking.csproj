@@ -165,6 +165,8 @@
     <Content Include="Admin\UserDetails.aspx" />
     <Content Include="Admin\Users.aspx" />
     <Content Include="Assests\images\favicon.png" />
+    <Content Include="ConfirmEmail.aspx" />
+    <Content Include="ConfitmMessage.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -329,6 +331,20 @@
     </Compile>
     <Compile Include="Admin\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmEmail.aspx.cs">
+      <DependentUpon>ConfirmEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmEmail.aspx.designer.cs">
+      <DependentUpon>ConfirmEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfitmMessage.aspx.cs">
+      <DependentUpon>ConfitmMessage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfitmMessage.aspx.designer.cs">
+      <DependentUpon>ConfitmMessage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
