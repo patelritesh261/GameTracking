@@ -29,7 +29,14 @@ namespace GameTracking.Admin
                 this.GetUsers();
             }
         }
-
+        /**
+* <summary>
+* This method gets users  from table.
+* </summary>
+* 
+* @method GetUsers
+* @returns {void}
+*/
 
         protected void GetUsers()
         {
@@ -42,7 +49,16 @@ namespace GameTracking.Admin
                 UsersGridView.DataBind();
             }
         }
-
+        /**
+     * <summary>
+     * This event handler deletes a user from the db using EF
+     * </summary>
+     * 
+     * @method UsersGridView_RowDeleting
+     * @param {object} sender
+     * @param {GridViewDeleteEventArgs} e
+     * @returns {void}
+     */
         protected void UsersGridView_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
             int selectedRow = e.RowIndex;

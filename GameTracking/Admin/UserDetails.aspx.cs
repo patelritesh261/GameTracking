@@ -32,16 +32,25 @@ namespace GameTracking.Admin
             {
                 if (Request.QueryString.Count > 0)
                 {
+                    //place holder hide when user want to edit record
                     PasswordPlaceHolder.Visible = false;
                     this.GetUser();
                 }
                 else
                 {
+                    //place holder show when user want to add record
                     PasswordPlaceHolder.Visible = true;
                 }
             }
         }
-
+        /**
+* <summary>
+* This method gets user details from table.
+* </summary>
+* 
+* @method GetUser
+* @returns {void}
+*/
         protected void GetUser()
         {
             string UserID = Request.QueryString["Id"].ToString();
