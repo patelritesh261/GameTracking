@@ -194,7 +194,7 @@ h3 a {
    Footer             
 ------------------------------------------*/
 footer {
-	padding-top: 75px;
+	padding-top: 70px;
 	padding-bottom: 75px;
 }
 
@@ -238,8 +238,9 @@ footer{
 	text-align: left;
 	font: bold 16px sans-serif;
 
-	padding: 55px 50px;
-	margin-top: 10%;
+	padding: 51px 50px;
+	margin-top: 7%;
+    
 }
 
 .footer-distributed .footer-left,
