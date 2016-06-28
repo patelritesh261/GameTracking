@@ -4,8 +4,8 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
         <div class="row">
-            <div class="col-md-offset-2 col-md-8">
-                <h1>Team List</h1>
+            <div class="col-md-offset-1 col-md-10">
+                <h1>Teams List</h1>
                    <div id="alertMsg" runat="server" visible="false"  class="alert btn-sample btn-sm alert-dismissible " role="alert">
                         <button type="button" class="close btn-sm" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                          <asp:Label ID="lblMsg"  runat="server"  Text=""></asp:Label>
