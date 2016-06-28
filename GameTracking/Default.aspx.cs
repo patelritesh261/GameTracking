@@ -56,9 +56,16 @@ namespace GameTracking
                                    where GR.Week==Week
                                    select new { GR.GRID, GR.Sepectators, GR.T1WinScore, GR.T2WinScore, GR.Date, GR.Team2, GR.Team1, GR.WTeam, GName = G.Name, TeamN1 = T.Name, TeamN2 = T1.Name, WTeamN = W.Name, TotalScore=GR.T1WinScore+GR.T2WinScore,GR.Week });
 
-                //bind result to grid view
-                rptGame.DataSource = GameRecords.ToList();
-                rptGame.DataBind();
+                if (GameRecords.Count() > 0)
+                {
+                    //bind result to grid view
+                    rptGame.DataSource = GameRecords.ToList();
+                    rptGame.DataBind();
+                    Jumbotron3.Visible = false;
+                }
+                else {
+                    Jumbotron3.Visible = true;
+                }
                 
             }
         }

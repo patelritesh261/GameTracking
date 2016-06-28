@@ -44,7 +44,7 @@
                             <p>Spectators : <%# Eval("Sepectators") %></p>
                             <p>Total Score : <%# Eval("TotalScore") %></p>
                             <p>Winning Team Points : <%# Eval("T1WinScore") %> and Team won by : <%# Eval("T2WinScore") %> Points</p>
-                            <p>Loosing Team Points :<%# Eval("T2WinScore") %> and Team lost by : <%# Eval("T1WinScore") %> Points</p>
+                            <p>Loosing Team Points :<%# Eval("T2WinScore") %>and Team lost by : <%# Eval("T1WinScore") %> Points</p>
                         </div>
 
                     </div>
@@ -94,4 +94,17 @@
             </div>
             <!-- /.modal -->
         </div>
+    <div class="container">
+        <div class="row">
+             <div class="col-md-12">
+                
+                <bs3:Jumbotron runat="server" ID="Jumbotron3" Visible="false">
+        <BodyContent>
+            <h3>No game for this Week</h3>
+        </BodyContent>
+    </bs3:Jumbotron>
+
+            </div>
+        </div>
+    </div>
 </asp:Content>
